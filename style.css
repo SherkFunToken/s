@@ -56,15 +56,9 @@ body::before {
   animation-duration: 35s;
 }
 @keyframes moveElement {
-  0% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(100px, 50px);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(100px, 50px); }
+  100% { transform: translate(0, 0); }
 }
 
 /* Crypto Ticker com efeito neon */
@@ -85,6 +79,14 @@ body::before {
   0% { text-shadow: 0 0 5px #39ff14; }
   50% { text-shadow: 0 0 20px #39ff14; }
   100% { text-shadow: 0 0 5px #39ff14; }
+}
+
+/* Classes para valores positivos/negativos (usados no ticker) */
+.positive {
+  color: #39ff14;
+}
+.negative {
+  color: #ff4c4c;
 }
 
 /* Cabeçalho e Menu Futurístico */
@@ -188,15 +190,19 @@ body::before {
   animation: neonBorder 3s linear infinite;
 }
 @keyframes neonBorder {
-  0% {
-    border-image-source: linear-gradient(45deg, #39ff14, #ff1493);
-  }
-  50% {
-    border-image-source: linear-gradient(45deg, #ff1493, #39ff14);
-  }
-  100% {
-    border-image-source: linear-gradient(45deg, #39ff14, #ff1493);
-  }
+  0% { border-image-source: linear-gradient(45deg, #39ff14, #ff1493); }
+  50% { border-image-source: linear-gradient(45deg, #ff1493, #39ff14); }
+  100% { border-image-source: linear-gradient(45deg, #39ff14, #ff1493); }
+}
+/* Estilo para listas dentro de .content-box */
+.content-box ul {
+  list-style: none;
+  margin: 15px auto;
+  padding: 0;
+}
+.content-box ul li {
+  margin-bottom: 10px;
+  text-align: left;
 }
 
 /* Títulos com Efeito Neon */
@@ -254,6 +260,17 @@ body::before {
   transform: scale(1.05);
 }
 
+/* Estilo para a div da imagem do Giveaway */
+.giveaway-img {
+  text-align: center;
+  margin-top: 20px;
+}
+.giveaway-img img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #39ff14;
+}
+
 /* Footer e Contador */
 footer {
   text-align: center;
@@ -270,4 +287,9 @@ footer p {
   margin-bottom: 10px;
   color: #39ff14;
   text-shadow: 0 0 10px #39ff14;
+}
+
+/* Espaçamento para o conteúdo principal (para não ficar escondido atrás do ticker e header) */
+main {
+  padding-top: 100px;
 }
