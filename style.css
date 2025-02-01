@@ -58,19 +58,19 @@ body::before {
   animation: moveElement 25s linear infinite;
 }
 .trovoes {
-  background: url("trovoes.gif") no-repeat;
+  background: url("playerAI3.png") no-repeat;
   top: 10%;
   left: 5%;
   animation-duration: 25s;
 }
 .galaxias {
-  background: url("galaxias.gif") no-repeat;
+  background: url("payerAI4.png") no-repeat;
   top: 50%;
   right: 5%;
   animation-duration: 30s;
 }
 .metaverso {
-  background: url("metaverso.gif") no-repeat;
+  background: url("fungame.png") no-repeat;
   bottom: 10%;
   left: 50%;
   animation-duration: 35s;
