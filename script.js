@@ -182,7 +182,7 @@ function initAdminModal() {
   });
   
   window.addEventListener("click", (e) => {
-    if (e.target == modal) {
+    if (e.target === modal) {
       modal.style.display = "none";
     }
   });
@@ -191,7 +191,7 @@ function initAdminModal() {
     e.preventDefault();
     const username = document.getElementById("adminUser").value;
     const password = document.getElementById("adminPass").value;
-    // Exemplo de credenciais: admin / password
+    // Credenciais de exemplo: admin / password
     if (username === "admin" && password === "password") {
       window.location.href = "adm.html";
     } else {
