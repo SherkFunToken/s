@@ -172,21 +172,15 @@ function startEnigmaCounter() {
 /* Initialize movement for PNG elements with simple collision detection */
 function initElementMovement() {
   const elements = document.querySelectorAll(".animated-elements .element");
+
+  // Atribui posição e velocidade aleatória para cada elemento
   elements.forEach(el => {
-    // Atribuir posição inicial aleatória, se não definida
-    if (!el.style.left) {
-      el.style.left = Math.random() * (window.innerWidth - 150) + "px";
-    }
-    if (!el.style.top) {
-      el.style.top = Math.random() * (window.innerHeight - 150) + "px";
-    }
-    // Atribuir velocidades aleatórias se não existirem
-    if (!el.dataset.vx) {
-      el.dataset.vx = (Math.random() * 4 - 2).toFixed(2); // de -2 a 2 px/frame
-      el.dataset.vy = (Math.random() * 4 - 2).toFixed(2);
-    }
+    el.style.left = Math.random() * (window.innerWidth - 150) + "px";
+    el.style.top = Math.random() * (window.innerHeight - 150) + "px";
+    el.dataset.vx = (Math.random() * 4 - 2).toFixed(2); // valor entre -2 e 2
+    el.dataset.vy = (Math.random() * 4 - 2).toFixed(2);
   });
-  
+
   function animate() {
     elements.forEach(el => {
       let vx = parseFloat(el.dataset.vx);
@@ -194,35 +188,19 @@ function initElementMovement() {
       let posX = parseFloat(el.style.left);
       let posY = parseFloat(el.style.top);
       const rect = el.getBoundingClientRect();
-      
-      // Atualiza a posição
+
+      // Atualiza posição
       posX += vx;
       posY += vy;
-      
-      // Verifica colisão com as bordas da janela
+
+      // Rebote nas bordas da janela
       if (posX <= 0 || posX + rect.width >= window.innerWidth) {
-        vx = -vx + (Math.random() * 1 - 0.5); // Inverte e adiciona pequena variação
+        vx = -vx;
       }
       if (posY <= 0 || posY + rect.height >= window.innerHeight) {
-        vy = -vy + (Math.random() * 1 - 0.5);
+        vy = -vy;
       }
-      
-      // Verifica colisão entre elementos (sem flag única, para evitar travamentos)
-      elements.forEach(other => {
-        if (other !== el) {
-          const r1 = el.getBoundingClientRect();
-          const r2 = other.getBoundingClientRect();
-          if (!(r1.right < r2.left ||
-                r1.left > r2.right ||
-                r1.bottom < r2.top ||
-                r1.top > r2.bottom)) {
-            // Inverte as velocidades com um fator aleatório para evitar "congelamento"
-            vx = -vx + (Math.random() * 1 - 0.5);
-            vy = -vy + (Math.random() * 1 - 0.5);
-          }
-        }
-      });
-      
+
       el.dataset.vx = vx.toFixed(2);
       el.dataset.vy = vy.toFixed(2);
       el.style.left = posX + "px";
