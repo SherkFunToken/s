@@ -163,7 +163,7 @@ function updateEnigmaCounter() {
   for (let i = 0; i < length; i++) {
     result += chars.charAt(Math.floor(Math.random() * chars.length));
   }
-  document.getElementById("enigma").textContent = "Guess and Win: " + result;
+  document.getElementById("enigma").innerHTML = "Guess and Win:<br>" + result;
 }
 function startEnigmaCounter() {
   setInterval(updateEnigmaCounter, 100);
