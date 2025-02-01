@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-/* Configurações gerais */
+/* Configurações gerais do body */
 body {
   font-family: 'Roboto', sans-serif;
   color: #e0e0e0;
@@ -14,7 +14,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Fundo animado (back.gif) com 50% de opacidade */
+/* BACKGROUND: back.gif com 50% de opacidade */
 body::before {
   content: "";
   position: fixed;
@@ -28,7 +28,27 @@ body::before {
   z-index: -2;
 }
 
-/* Elementos animados: trovoes, galaxias e metaverso */
+/* Crypto Ticker com efeito neon */
+.crypto-ticker {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 10px 0;
+  background: #111;
+  border-bottom: 2px solid #39ff14;
+  font-size: 18px;
+  text-align: center;
+  z-index: 1000;
+  color: #39ff14;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { text-shadow: 0 0 5px #39ff14; }
+  50% { text-shadow: 0 0 20px #39ff14; }
+  100% { text-shadow: 0 0 5px #39ff14; }
+}
+
+/* Elementos animados no fundo */
 .animated-elements .element {
   position: absolute;
   width: 150px;
@@ -61,85 +81,49 @@ body::before {
   100% { transform: translate(0, 0); }
 }
 
-/* Crypto Ticker com efeito neon */
-.crypto-ticker {
+/* MENU FIXO à direita */
+#menu-container {
   position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 10px 0;
-  background: #111;
-  border-bottom: 2px solid #39ff14;
-  font-size: 18px;
-  text-align: center;
-  z-index: 1000;
-  color: #39ff14;
-  animation: pulse 2s infinite;
-}
-@keyframes pulse {
-  0% { text-shadow: 0 0 5px #39ff14; }
-  50% { text-shadow: 0 0 20px #39ff14; }
-  100% { text-shadow: 0 0 5px #39ff14; }
-}
-
-/* Classes para valores positivos/negativos (usados no ticker) */
-.positive {
-  color: #39ff14;
-}
-.negative {
-  color: #ff4c4c;
-}
-
-/* Cabeçalho e Menu Futurístico */
-.header {
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
   background: rgba(0, 0, 0, 0.8);
-  padding: 20px;
+  padding: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  z-index: 1100;
 }
-.nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-}
-.nav ul li {
-  position: relative;
-  margin: 0 15px;
-}
-.nav ul li a {
+#menu-container .menu-label {
   color: #39ff14;
   font-size: 1.2rem;
-  text-decoration: none;
-  transition: opacity 0.3s;
+  cursor: pointer;
+  transition: transform 0.3s;
 }
-.nav ul li a:hover {
-  animation: blink 1s infinite;
+#menu-container .menu-label:hover {
+  transform: scale(1.1);
 }
-@keyframes blink {
-  0%, 50%, 100% { opacity: 1; }
-  25%, 75% { opacity: 0.5; }
-}
-/* Dropdown */
-.dropdown-content {
+#menu-container .menu-dropdown {
   display: none;
-  position: absolute;
-  top: 120%;
-  left: 0;
-  background: rgba(0, 0, 0, 0.9);
-  padding: 10px 0;
-  border-radius: 5px;
-  min-width: 150px;
-  z-index: 100;
+  list-style: none;
+  margin-top: 10px;
 }
-.dropdown-content li {
-  padding: 8px 15px;
-}
-.dropdown-content li a {
-  color: #ff1493;
-  font-size: 1rem;
-}
-.dropdown:hover .dropdown-content {
+#menu-container:hover .menu-dropdown {
   display: block;
 }
+#menu-container .menu-dropdown li {
+  margin: 5px 0;
+}
+#menu-container .menu-dropdown li a {
+  color: #ff1493;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+#menu-container .menu-dropdown li a:hover {
+  color: #39ff14;
+}
 
-/* Banner Section */
+/* Seção do Banner */
 .banner-section {
   margin-top: 60px;
 }
@@ -171,13 +155,14 @@ body::before {
   font-size: 2rem;
   color: #39ff14;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.3s;
 }
 .banner-nav button:hover {
   background: rgba(0, 0, 0, 0.8);
+  transform: scale(1.1);
 }
 
-/* Blocos de Conteúdo Uniformes com Borda Neon Animada */
+/* Blocos de Conteúdo com Borda Neon Animada e Rotação */
 .content-box {
   width: 80%;
   max-width: 900px;
@@ -187,14 +172,18 @@ body::before {
   border: 2px solid;
   border-image-slice: 1;
   border-radius: 10px;
-  animation: neonBorder 3s linear infinite;
+  animation: neonBorder 5s linear infinite, rotateContent 10s linear infinite;
 }
 @keyframes neonBorder {
   0% { border-image-source: linear-gradient(45deg, #39ff14, #ff1493); }
   50% { border-image-source: linear-gradient(45deg, #ff1493, #39ff14); }
   100% { border-image-source: linear-gradient(45deg, #39ff14, #ff1493); }
 }
-/* Estilo para listas dentro de .content-box */
+@keyframes rotateContent {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(2deg); }
+  100% { transform: rotate(0deg); }
+}
 .content-box ul {
   list-style: none;
   margin: 15px auto;
@@ -205,20 +194,16 @@ body::before {
   text-align: left;
 }
 
-/* Títulos com Efeito Neon */
+/* Títulos com efeito neon */
 .neon-text {
   font-family: 'Orbitron', sans-serif;
   color: #39ff14;
-  text-shadow:
-    0 0 5px #39ff14,
-    0 0 10px #39ff14,
-    0 0 20px #ff1493,
-    0 0 40px #ff1493;
+  text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #ff1493, 0 0 40px #ff1493;
   text-align: center;
   margin-bottom: 15px;
 }
 
-/* Botões */
+/* Botões e links com animação */
 .button-highlightgame,
 .button {
   display: inline-block;
@@ -228,7 +213,7 @@ body::before {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.3s;
+  transition: transform 0.2s, box-shadow 0.3s, background 0.3s;
 }
 .button-highlightgame {
   background: #ff1493;
@@ -248,8 +233,15 @@ body::before {
   transform: scale(1.1);
   box-shadow: 0 0 20px #1e90ff;
 }
+a {
+  transition: color 0.3s, transform 0.3s;
+}
+a:hover {
+  color: #ff1493;
+  transform: scale(1.05);
+}
 
-/* Estilos para imagens da área Meme */
+/* Imagem da área Meme */
 .meme-image {
   max-width: 100%;
   border-radius: 10px;
@@ -260,7 +252,7 @@ body::before {
   transform: scale(1.05);
 }
 
-/* Estilo para a div da imagem do Giveaway */
+/* Imagem do Giveaway */
 .giveaway-img {
   text-align: center;
   margin-top: 20px;
@@ -271,7 +263,7 @@ body::before {
   box-shadow: 0 0 15px #39ff14;
 }
 
-/* Footer e Contador */
+/* Footer e contador */
 footer {
   text-align: center;
   padding: 20px;
@@ -289,7 +281,65 @@ footer p {
   text-shadow: 0 0 10px #39ff14;
 }
 
-/* Espaçamento para o conteúdo principal (para não ficar escondido atrás do ticker e header) */
+/* Ao passar o mouse sobre "@SherkFunToken", exibe a imagem me.png */
+#contact-token {
+  position: relative;
+}
+#contact-token:hover::after {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 100px;
+  height: 100px;
+  background: url("me.png") no-repeat center center;
+  background-size: contain;
+  z-index: 1200;
+}
+
+/* Botão flutuante fixo no canto inferior direito */
+#floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ff1493;
+  color: #fff;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 50px;
+  box-shadow: 0 0 10px #ff1493;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  z-index: 1200;
+}
+#floating-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #ff1493;
+}
+
+/* Espaçamento para o conteúdo principal */
 main {
   padding-top: 100px;
+  padding-bottom: 80px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  #menu-container {
+    top: 40%;
+  }
+  .button-highlightgame,
+  .button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 480px) {
+  #menu-container {
+    top: 30%;
+  }
+  .banner-nav button {
+    font-size: 1.5rem;
+    padding: 5px;
+  }
 }
