@@ -30,6 +30,11 @@
       </marquee>
     </div>
 
+    <!-- Enigma Counter (Guess and Win) placed just below the ticker -->
+    <div id="enigma" class="enigma-counter">
+      <!-- The dynamic text will be injected here via JS -->
+    </div>
+
     <!-- Floating Menu at Top Right (without "About") -->
     <div id="floating-menu">
       <div class="menu-button">Menu</div>
@@ -43,7 +48,7 @@
       </ul>
     </div>
 
-    <!-- Animated PNG Elements in Background -->
+    <!-- Animated PNG Elements in Background (each on its own layer) -->
     <div class="animated-elements">
       <div class="element trovoes"></div>
       <div class="element galaxias"></div>
@@ -64,9 +69,6 @@
           </div>
         </div>
       </section>
-
-          <!-- Enigma Counter (Guess and Win) -->
-    <div id="enigma" class="enigma-counter"></div>
 
       <!-- Dynamic Content Sections -->
       <section class="content-box">
@@ -157,6 +159,13 @@
         Contact:
         <a id="contact-token" href="https://t.me/SherkFunCommunity" target="_blank">@SherkFunToken</a>
       </p>
+      <!-- Optional: you can also include the external counter here if desired -->
+      <div align="center">
+        <a href="https://contador.s12.com.br">
+          <img src="https://contador.s12.com.br/img-Y11z0BYYCdb7bZYx-46.gif" border="0" alt="Free Access Counter">
+        </a>
+        <script type="text/javascript" src="https://contador.s12.com.br/ad.js?id=Y11z0BYYCdb7bZYx"></script>
+      </div>
     </footer>
 
     <!-- Floating Contact Button -->
@@ -184,7 +193,7 @@
       </div>
     </div>
 
-    <!-- Enigma Modal (opens when clicking on "Guess and Win:") -->
+    <!-- Enigma Modal for "Guess and Win" (opens when clicking on the enigma counter) -->
     <div id="enigmaModal" class="modal">
       <div class="modal-content">
         <span class="close" id="enigmaModalClose">&times;</span>
