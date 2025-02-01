@@ -1,3 +1,11 @@
+// Se desejar adicionar interações extras, scripts ou animações específicas, este arquivo pode ser expandido.
+// Por exemplo, se quiser implementar alguma lógica para alternar conteúdos ou controlar os elementos animados:
+
+window.onload = function () {
+  console.log("Site futurista carregado!");
+  // Adicione aqui quaisquer scripts adicionais conforme a necessidade.
+};
+
 /* Banner rotation script */
 let bannerIndex = 0;
 const banners = [
