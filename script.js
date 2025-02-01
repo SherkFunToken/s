@@ -155,14 +155,83 @@ function getRandomGiveaway() {
   document.getElementById("giveaway-content").innerHTML = randomVersion.content;
 }
 
-/* Visitor Counter */
-let count = 0;
-function startCounter() {
-  const counterElement = document.getElementById("counter");
-  setInterval(() => {
-    count++;
-    counterElement.textContent = "Visitor Count: " + count;
-  }, 1000);
+/* Enigma Counter (random string com números e letras) */
+function updateEnigmaCounter() {
+  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let result = "";
+  const length = 10; // tamanho da string
+  for (let i = 0; i < length; i++) {
+    result += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  document.getElementById("counter").textContent = "Enigma: " + result;
+}
+
+/* Atualiza o Enigma Counter a cada 100ms */
+function startEnigmaCounter() {
+  setInterval(updateEnigmaCounter, 100);
+}
+
+/* Movimento aleatório dos elementos PNG com colisão simples */
+function initElementMovement() {
+  const elements = document.querySelectorAll(".animated-elements .element");
+  elements.forEach(el => {
+    // Se ainda não tiver posição definida, atribua valores aleatórios
+    if (!el.style.left) {
+      el.style.left = Math.random() * (window.innerWidth - 150) + "px";
+    }
+    if (!el.style.top) {
+      el.style.top = Math.random() * (window.innerHeight - 150) + "px";
+    }
+    // Atribuir velocidades randômicas se não existirem
+    if (!el.dataset.vx) {
+      el.dataset.vx = (Math.random() * 4 - 2).toFixed(2); // de -2 a 2 px/frame
+      el.dataset.vy = (Math.random() * 4 - 2).toFixed(2);
+    }
+  });
+  
+  function animate() {
+    elements.forEach(el => {
+      let vx = parseFloat(el.dataset.vx);
+      let vy = parseFloat(el.dataset.vy);
+      let posX = parseFloat(el.style.left);
+      let posY = parseFloat(el.style.top);
+      const rect = el.getBoundingClientRect();
+
+      // Atualiza posição
+      posX += vx;
+      posY += vy;
+
+      // Verifica colisão com bordas da janela
+      if (posX <= 0 || posX + rect.width >= window.innerWidth) {
+        vx = -vx;
+      }
+      if (posY <= 0 || posY + rect.height >= window.innerHeight) {
+        vy = -vy;
+      }
+      // Verifica colisão entre elementos (método simples)
+      elements.forEach(other => {
+        if (other !== el) {
+          const r1 = el.getBoundingClientRect();
+          const r2 = other.getBoundingClientRect();
+          if (!(r1.right < r2.left ||
+                r1.left > r2.right ||
+                r1.bottom < r2.top ||
+                r1.top > r2.bottom)) {
+            // Se colidirem, inverte as velocidades
+            vx = -vx;
+            vy = -vy;
+          }
+        }
+      });
+      
+      el.dataset.vx = vx.toFixed(2);
+      el.dataset.vy = vy.toFixed(2);
+      el.style.left = posX + "px";
+      el.style.top = posY + "px";
+    });
+    requestAnimationFrame(animate);
+  }
+  animate();
 }
 
 /* Admin Modal Handling */
@@ -208,7 +277,8 @@ window.onload = function () {
   getRandomFirstSection();
   getRandomSecondSection();
   getRandomGiveaway();
-  startCounter();
+  startEnigmaCounter();
   initAdminModal();
+  initElementMovement();
   console.log("Site futurista carregado!");
 };
