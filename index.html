@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="$SFT - Entre na experiência neon do metaverso, powered by Sherk.fun" />
+  <meta name="keywords" content="crypto, token, SFT, neon, metaverso, futurista, blockchain" />
+  <meta name="author" content="SherkFun" />
+  <title>Sherk Fun Token ($SFT) - Neon Metaverse Experience</title>
+  <link rel="icon" type="image/png" href="sherkhead.png" />
+  <!-- Link para a folha de estilo e fonte futurista -->
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Ticker de Criptomoedas -->
+  <div class="crypto-ticker">
+    <marquee behavior="scroll" direction="left" scrollamount="5" id="crypto-prices">
+      Loading cryptocurrency prices...
+    </marquee>
+  </div>
+
+  <!-- Cabeçalho com logotipo e navegação -->
+  <header class="header">
+    <h1 class="logo">Sherk Fun Token <span>($SFT)</span></h1>
+    <nav class="nav">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#game">Game Hub</a></li>
+        <li><a href="#tokenomics">Tokenomics</a></li>
+        <li><a href="#meme">Meme</a></li>
+        <li><a href="#" id="adminBtn">Admin</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main>
+    <!-- Seção de Banner -->
+    <section class="banner-section" id="home">
+      <div class="banner-container">
+        <a id="banner-link" href="https://sherkfun.io/">
+          <img id="banner" src="https://token4fun.github.io/babysherk/banner1.gif" alt="Neon Banner" />
+        </a>
+        <div class="banner-nav">
+          <button class="prev" onclick="prevBanner()">&#10094;</button>
+          <button class="next" onclick="nextBanner()">&#10095;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seções de Conteúdo Dinâmico -->
+    <section class="content-section">
+      <div class="content neon-card">
+        <h2 id="highlight-title-first"></h2>
+        <div id="dynamic-content-first"></div>
+      </div>
+      <div class="content neon-card">
+        <h2 id="highlight-title-second"></h2>
+        <div id="dynamic-content-second"></div>
+      </div>
+    </section>
+
+    <!-- Seção Game Hub -->
+    <section class="game-section" id="game">
+      <div class="neon-card contentgame">
+        <h2>Sherk Fun Token Game Hub 🎮</h2>
+        <p>Experimente a adrenalina dos jogos online no metaverso neon! Mergulhe em nossa arena futurista:</p>
+        <ul>
+          <li><strong>Sherk Pong</strong> – Ação rápida com efeitos neon em cada movimento.</li>
+          <li><strong>Sherk Invaders</strong> – Defenda o metaverso dos alienígenas haters. (Em breve)</li>
+          <li><strong>Sherk-Man</strong> – Navegue por um labirinto neon coletando tokens. (Em breve)</li>
+          <li><strong>Sherkeroids</strong> – Combate estelar com um toque futurista. (Em breve)</li>
+          <li><strong>Sherk Raid</strong> – Domine as correntes neon em batalhas épicas. (Em breve)</li>
+        </ul>
+        <a href="https://sherkfuntoken.github.io/site/game.html" class="button-highlightgame">Play Now</a>
+      </div>
+    </section>
+
+    <!-- Seção de Giveaway -->
+    <section class="content-section">
+      <div class="neon-card">
+        <h2 id="giveaway-title"></h2>
+        <div id="giveaway-content"></div>
+        <div class="giveaway-img">
+          <a href="https://t.me/SherkFunCommunity/1712" target="_blank">
+            <img src="giveaway.gif" alt="Giveaway Neon" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Why Choose -->
+    <section class="content-section">
+      <div class="neon-card">
+        <h2>Why Choose $SFT? 🚀</h2>
+        <p>Entre em um mundo onde a tecnologia blockchain se funde com o visual neon do futuro. $SFT representa velocidade, inovação e poder comunitário.</p>
+        <ul>
+          <li><strong>Rapidez & Eficiência:</strong> Construído na rede Solana para transações ultra-rápidas.</li>
+          <li><strong>Ferramentas Inovadoras:</strong> Equipado com SherkFunBuyBot e o futuro SherkSnipe&Buy Bot.</li>
+          <li><strong>Comunidade no Comando:</strong> Um token feito para e pela comunidade.</li>
+          <li><strong>Segurança Absoluta:</strong> Total descentralização e LP tokens queimados.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Seção Tokenomics -->
+    <section class="content-section" id="tokenomics">
+      <div class="neon-card">
+        <h2>Tokenomics: The Heart of $SFT</h2>
+        <p>Descubra os fundamentos que impulsionam nossa revolução neon:</p>
+        <ul>
+          <li><strong>Name:</strong> Sherk Fun Token</li>
+          <li><strong>Symbol:</strong> $SFT</li>
+          <li><strong>Network:</strong> Solana – Rápido, escalável e futurista.</li>
+          <li><strong>Total Supply:</strong> 1,000,000,000</li>
+          <li><strong>Minting:</strong> Revoked</li>
+          <li><strong>Ownership:</strong> Revoked</li>
+          <li><strong>Tax:</strong> 0%</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Seção Meme -->
+    <section class="content-section" id="meme">
+      <div class="neon-card meme_content">
+        <h2>Subscribe to our Meme Channel</h2>
+        <a href="https://t.me/SherkMemes" target="_blank">
+          <img src="meme.gif" alt="Meme Channel" class="meme-image" />
+        </a>
+        <a href="https://t.me/SherkMemes" class="button-highlightgame">Join Now</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Área de Administração (Modal) -->
+  <div id="adminModal" class="modal">
+    <div class="modal-content neon-card">
+      <span class="close" id="modalClose">&times;</span>
+      <h2>Admin Login</h2>
+      <form id="adminForm">
+        <input type="text" id="adminUser" placeholder="Username" required />
+        <input type="password" id="adminPass" placeholder="Password" required />
+        <button type="submit" class="button">Login</button>
+      </form>
+      <div id="adminArea" style="display:none;">
+        <h3>Admin Panel</h3>
+        <p>Bem-vindo, Admin! Aqui você pode gerenciar o website.</p>
+        <!-- Funcionalidades adicionais podem ser implementadas aqui -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Rodapé com Contador -->
+  <footer>
+    <div id="counter" class="counter">Visitor Count: 0</div>
+    <p>
+      &copy; 2024/2025 Sherk Fun Token ($SFT) | Powered by
+      <a href="https://sherkfun.io" target="_blank">Sherkfun.io</a>
+    </p>
+    <p>
+      Contact: <a href="https://t.me/SherkFunCommunity" target="_blank">@SherkFunToken</a>
+    </p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
