@@ -63,9 +63,9 @@ async function fetchCryptoPrices() {
   }
 }
 
-/* Conteúdo Dinâmico */
+/* Dynamic Content */
 
-/* Primeira Seção */
+/* First Section */
 function getRandomFirstSection() {
   const versions = [
     {
@@ -95,7 +95,7 @@ function getRandomFirstSection() {
   document.getElementById("dynamic-content-first").innerHTML = randomVersion.content;
 }
 
-/* Segunda Seção */
+/* Second Section */
 function getRandomSecondSection() {
   const versions = [
     {
@@ -128,7 +128,7 @@ function getRandomSecondSection() {
   document.getElementById("dynamic-content-second").innerHTML = randomVersion.content;
 }
 
-/* Seção Giveaway */
+/* Giveaway Section */
 function getRandomGiveaway() {
   const versions = [
     {
@@ -155,36 +155,34 @@ function getRandomGiveaway() {
   document.getElementById("giveaway-content").innerHTML = randomVersion.content;
 }
 
-/* Enigma Counter (random string com números e letras) */
+/* Enigma Counter (random alphanumeric string) */
 function updateEnigmaCounter() {
   const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
   let result = "";
-  const length = 10; // tamanho da string
+  const length = 10; // length of the string
   for (let i = 0; i < length; i++) {
     result += chars.charAt(Math.floor(Math.random() * chars.length));
   }
   document.getElementById("counter").textContent = "Enigma: " + result;
 }
-
-/* Atualiza o Enigma Counter a cada 100ms */
 function startEnigmaCounter() {
   setInterval(updateEnigmaCounter, 100);
 }
 
-/* Movimento aleatório dos elementos PNG com colisão simples */
+/* Initialize movement for PNG elements with collision detection */
 function initElementMovement() {
   const elements = document.querySelectorAll(".animated-elements .element");
   elements.forEach(el => {
-    // Se ainda não tiver posição definida, atribua valores aleatórios
+    // Set random initial position if not already set
     if (!el.style.left) {
       el.style.left = Math.random() * (window.innerWidth - 150) + "px";
     }
     if (!el.style.top) {
       el.style.top = Math.random() * (window.innerHeight - 150) + "px";
     }
-    // Atribuir velocidades randômicas se não existirem
+    // Set random velocity if not already set
     if (!el.dataset.vx) {
-      el.dataset.vx = (Math.random() * 4 - 2).toFixed(2); // de -2 a 2 px/frame
+      el.dataset.vx = (Math.random() * 4 - 2).toFixed(2); // between -2 and 2 px/frame
       el.dataset.vy = (Math.random() * 4 - 2).toFixed(2);
     }
   });
@@ -197,18 +195,18 @@ function initElementMovement() {
       let posY = parseFloat(el.style.top);
       const rect = el.getBoundingClientRect();
 
-      // Atualiza posição
+      // Update position
       posX += vx;
       posY += vy;
 
-      // Verifica colisão com bordas da janela
+      // Bounce off window edges
       if (posX <= 0 || posX + rect.width >= window.innerWidth) {
         vx = -vx;
       }
       if (posY <= 0 || posY + rect.height >= window.innerHeight) {
         vy = -vy;
       }
-      // Verifica colisão entre elementos (método simples)
+      // Simple collision detection with other elements
       elements.forEach(other => {
         if (other !== el) {
           const r1 = el.getBoundingClientRect();
@@ -217,7 +215,6 @@ function initElementMovement() {
                 r1.left > r2.right ||
                 r1.bottom < r2.top ||
                 r1.top > r2.bottom)) {
-            // Se colidirem, inverte as velocidades
             vx = -vx;
             vy = -vy;
           }
@@ -232,6 +229,39 @@ function initElementMovement() {
     requestAnimationFrame(animate);
   }
   animate();
+}
+
+/* Contact Modal Handling with Countdown */
+function initContactModal() {
+  const contactButton = document.getElementById("floating-button");
+  const contactModal = document.getElementById("contactModal");
+  const contactModalClose = document.getElementById("contactModalClose");
+  const countdownElem = document.getElementById("contactCountdown");
+
+  contactButton.addEventListener("click", () => {
+    contactModal.style.display = "block";
+    let count = 3;
+    countdownElem.textContent = count;
+    const interval = setInterval(() => {
+      count--;
+      countdownElem.textContent = count;
+      if(count <= 0) {
+        clearInterval(interval);
+        contactModal.style.display = "none";
+        window.location.href = "https://t.me/SherkFunCommunity";
+      }
+    }, 1000);
+  });
+  
+  contactModalClose.addEventListener("click", () => {
+    contactModal.style.display = "none";
+  });
+  
+  window.addEventListener("click", (e) => {
+    if(e.target === contactModal) {
+      contactModal.style.display = "none";
+    }
+  });
 }
 
 /* Admin Modal Handling */
@@ -260,7 +290,7 @@ function initAdminModal() {
     e.preventDefault();
     const username = document.getElementById("adminUser").value;
     const password = document.getElementById("adminPass").value;
-    // Credenciais de exemplo: admin / password
+    // Example credentials: admin / password
     if (username === "admin" && password === "password") {
       window.location.href = "adm.html";
     } else {
@@ -269,7 +299,7 @@ function initAdminModal() {
   });
 }
 
-/* Inicialização Geral */
+/* Initialization */
 window.onload = function () {
   setInterval(rotateBanner, 7000);
   fetchCryptoPrices();
@@ -279,6 +309,7 @@ window.onload = function () {
   getRandomGiveaway();
   startEnigmaCounter();
   initAdminModal();
+  initContactModal();
   initElementMovement();
-  console.log("Site futurista carregado!");
+  console.log("Futuristic site loaded!");
 };
