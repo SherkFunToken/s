@@ -3,32 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Site Futurista Neon</title>
+    <meta name="description" content="$SFT, powered by Sherk.fun – uma revolução cripto no metaverso futurista." />
+    <meta name="keywords" content="cryptocurrency, Sherk Fun Token, $SFT, Solana, blockchain, neon, futurista, metaverso" />
+    <meta name="author" content="Sherkfun" />
+    <meta name="robots" content="index, follow" />
+    <title>Sherk Fun Token ($SFT) - Experiência Neon no Metaverso</title>
+    <link rel="icon" type="image/png" href="sherkhead.png" />
     <link rel="stylesheet" href="style.css" />
-    <!-- Fonte Futurista -->
+    <!-- Fonte futurista -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <!-- Menu de Navegação Futurístico com Dropdown -->
+    <!-- Ticker de Criptomoedas com efeito neon -->
+    <div class="crypto-ticker">
+      <marquee behavior="scroll" direction="left" scrollamount="5" id="crypto-prices">
+        Loading cryptocurrency prices...
+      </marquee>
+    </div>
+
+    <!-- Menu Futurístico com Dropdown -->
     <header class="header">
       <nav class="nav">
         <ul>
-          <li><a href="#">Home</a></li>
+          <li><a href="#home">Home</a></li>
           <li class="dropdown">
-            <a href="#">Serviços</a>
+            <a href="#servicos">Serviços</a>
             <ul class="dropdown-content">
-              <li><a href="#">Design Neon</a></li>
-              <li><a href="#">Animações Futuristas</a></li>
-              <li><a href="#">Consultoria</a></li>
+              <li><a href="#game">Game Hub</a></li>
+              <li><a href="#tokenomics">Tokenomics</a></li>
+              <li><a href="#meme">Meme Channel</a></li>
             </ul>
           </li>
-          <li><a href="#">Sobre</a></li>
-          <li><a href="#">Contato</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
     </header>
 
-    <!-- Elementos Animados (Trovoes, Galaxias, Metaverso) -->
+    <!-- Elementos Animados no Fundo -->
     <div class="animated-elements">
       <div class="element trovoes"></div>
       <div class="element galaxias"></div>
@@ -37,19 +49,116 @@
 
     <!-- Conteúdo Principal -->
     <main>
-      <section class="content-box">
-        <h2 class="neon-text">Bem-vindo ao Futuro Neon</h2>
-        <p>
-          Este é um exemplo de conteúdo com borda animada e efeitos neon. A estrutura está pensada para ser uniforme e futurista.
-        </p>
+      <!-- Seção de Banner Rotativo -->
+      <section id="home" class="banner-section">
+        <div class="banner-container">
+          <a id="banner-link" href="https://sherkfun.io/">
+            <img id="banner" src="https://token4fun.github.io/babysherk/banner1.gif" alt="Banner Neon" />
+          </a>
+          <div class="banner-nav">
+            <button class="prev" onclick="prevBanner()">&#10094;</button>
+            <button class="next" onclick="nextBanner()">&#10095;</button>
+          </div>
+        </div>
       </section>
+
+      <!-- Seções Dinâmicas (Conteúdo com borda neon animada) -->
       <section class="content-box">
-        <h2 class="neon-text">Inovações Tecnológicas</h2>
+        <h2 id="highlight-title-first" class="neon-text"></h2>
+        <div id="dynamic-content-first">
+          <!-- Conteúdo dinâmico inserido via script.js -->
+        </div>
+      </section>
+
+      <section class="content-box">
+        <h2 id="highlight-title-second" class="neon-text"></h2>
+        <div id="dynamic-content-second">
+          <!-- Conteúdo dinâmico inserido via script.js -->
+        </div>
+      </section>
+
+      <!-- Seção Game Hub -->
+      <section id="game" class="content-box">
+        <h2 class="neon-text">Sherk Fun Token Game Hub 🎮</h2>
         <p>
-          Aqui você encontra as mais recentes inovações com um design que parece saído de outro mundo.
+          Experimente a emoção dos jogos online no metaverso neon! Jogue:
         </p>
+        <ul>
+          <li><strong>Sherk Pong</strong> – Ação rápida com efeitos neon.</li>
+          <li><strong>Sherk Invaders</strong> – Defenda o ecossistema dos haters. (Em breve)</li>
+          <li><strong>Sherk-Man</strong> – Colete tokens em um labirinto futurista. (Em breve)</li>
+          <li><strong>Sherkeroids</strong> – Combate espacial em estilo neon. (Em breve)</li>
+          <li><strong>Sherk Raid</strong> – Navegue por batalhas épicas no metaverso. (Em breve)</li>
+        </ul>
+        <a href="https://sherkfuntoken.github.io/site/game.html" class="button-highlightgame">Play Now</a>
+      </section>
+
+      <!-- Seção Giveaway -->
+      <section class="content-box">
+        <h2 id="giveaway-title" class="neon-text"></h2>
+        <div id="giveaway-content">
+          <!-- Conteúdo dinâmico inserido via script.js -->
+        </div>
+        <div class="giveaway-img">
+          <a href="https://t.me/SherkFunCommunity/1712" target="_blank">
+            <img src="giveaway.gif" alt="Giveaway Neon" />
+          </a>
+        </div>
+      </section>
+
+      <!-- Seção "Why Choose $SFT?" -->
+      <section class="content-box">
+        <h2 class="neon-text">Why Choose $SFT? 🚀</h2>
+        <p>
+          $SFT não é apenas um token – é a fusão entre tecnologia de ponta e uma comunidade vibrante. Veja por que:
+        </p>
+        <ul>
+          <li><strong>Speed and Savings:</strong> Rápido e com taxas baixíssimas na rede Solana.</li>
+          <li><strong>Cutting-Edge Tools:</strong> Ferramentas como o SherkFunBuyBot e o SherkSnipe&Buy Bot.</li>
+          <li><strong>Community-Driven:</strong> Um token feito para e pela comunidade.</li>
+          <li><strong>Secure and Trustworthy:</strong> Liquidity Pool automaticamente queimado para segurança.</li>
+          <li><strong>Unruggable:</strong> LP tokens queimados, garantindo um ecossistema seguro.</li>
+        </ul>
+      </section>
+
+      <!-- Seção Tokenomics -->
+      <section id="tokenomics" class="content-box">
+        <h2 class="neon-text">Tokenomics: The Heart of $SFT</h2>
+        <p>
+          Conheça os fundamentos que fazem o $SFT funcionar:
+        </p>
+        <ul>
+          <li><strong>Name:</strong> Sherk Fun Token</li>
+          <li><strong>Symbol:</strong> $SFT</li>
+          <li><strong>Network:</strong> Solana – Rápida, escalável e futurista.</li>
+          <li><strong>Total Supply:</strong> 1,000,000,000</li>
+          <li><strong>Minting:</strong> Revoked</li>
+          <li><strong>Ownership:</strong> Revoked</li>
+          <li><strong>Tax:</strong> 0%</li>
+        </ul>
+      </section>
+
+      <!-- Seção Meme Channel -->
+      <section id="meme" class="content-box">
+        <h2 class="neon-text">Subscribe to our Meme Channel</h2>
+        <a href="https://t.me/SherkMemes" target="_blank">
+          <img src="meme.gif" alt="Meme Channel Neon" class="meme-image" />
+        </a>
+        <a href="https://t.me/SherkMemes" class="button-highlightgame">Join Now</a>
       </section>
     </main>
+
+    <!-- Footer -->
+    <footer>
+      <div id="counter" class="counter">Visitor Count: 0</div>
+      <p>
+        &copy; 2024/2025 Sherk Fun Token ($SFT) | Powered by 
+        <a href="https://sherkfun.io" target="_blank">Sherkfun.io</a>
+      </p>
+      <p>
+        Contact: <a href="https://t.me/SherkFunCommunity" target="_blank">@SherkFunToken</a>
+      </p>
+    </footer>
 
     <script src="script.js"></script>
   </body>
