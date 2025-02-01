@@ -21,26 +21,20 @@
       </marquee>
     </div>
 
-    <!-- Menu Futurístico com Dropdown -->
-    <header class="header">
-      <nav class="nav">
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li class="dropdown">
-            <a href="#servicos">Serviços</a>
-            <ul class="dropdown-content">
-              <li><a href="#game">Game Hub</a></li>
-              <li><a href="#tokenomics">Tokenomics</a></li>
-              <li><a href="#meme">Meme Channel</a></li>
-            </ul>
-          </li>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
-      </nav>
-    </header>
+    <!-- Menu fixo à direita: exibe "Menu" e, ao passar o mouse, mostra o dropdown -->
+    <div id="menu-container">
+      <div class="menu-label">Menu</div>
+      <ul class="menu-dropdown">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#game">Game Hub</a></li>
+        <li><a href="#tokenomics">Tokenomics</a></li>
+        <li><a href="#meme">Meme Channel</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
 
-    <!-- Elementos Animados no Fundo -->
+    <!-- Elementos animados no fundo -->
     <div class="animated-elements">
       <div class="element trovoes"></div>
       <div class="element galaxias"></div>
@@ -62,19 +56,15 @@
         </div>
       </section>
 
-      <!-- Seções Dinâmicas (Conteúdo com borda neon animada) -->
+      <!-- Seções de Conteúdo com borda neon giratória -->
       <section class="content-box">
         <h2 id="highlight-title-first" class="neon-text"></h2>
-        <div id="dynamic-content-first">
-          <!-- Conteúdo dinâmico inserido via script.js -->
-        </div>
+        <div id="dynamic-content-first"></div>
       </section>
 
       <section class="content-box">
         <h2 id="highlight-title-second" class="neon-text"></h2>
-        <div id="dynamic-content-second">
-          <!-- Conteúdo dinâmico inserido via script.js -->
-        </div>
+        <div id="dynamic-content-second"></div>
       </section>
 
       <!-- Seção Game Hub -->
@@ -96,9 +86,7 @@
       <!-- Seção Giveaway -->
       <section class="content-box">
         <h2 id="giveaway-title" class="neon-text"></h2>
-        <div id="giveaway-content">
-          <!-- Conteúdo dinâmico inserido via script.js -->
-        </div>
+        <div id="giveaway-content"></div>
         <div class="giveaway-img">
           <a href="https://t.me/SherkFunCommunity/1712" target="_blank">
             <img src="giveaway.gif" alt="Giveaway Neon" />
@@ -148,17 +136,20 @@
       </section>
     </main>
 
-    <!-- Footer -->
-    <footer>
+    <!-- Footer com contador e link que exibe a imagem me.png ao passar o mouse -->
+    <footer id="contato">
       <div id="counter" class="counter">Visitor Count: 0</div>
       <p>
         &copy; 2024/2025 Sherk Fun Token ($SFT) | Powered by 
         <a href="https://sherkfun.io" target="_blank">Sherkfun.io</a>
       </p>
       <p>
-        Contact: <a href="https://t.me/SherkFunCommunity" target="_blank">@SherkFunToken</a>
+        Contact: <a id="contact-token" href="https://t.me/SherkFunCommunity" target="_blank">@SherkFunToken</a>
       </p>
     </footer>
+
+    <!-- Botão flutuante fixo no canto inferior direito -->
+    <button id="floating-button">Contact</button>
 
     <script src="script.js"></script>
   </body>
