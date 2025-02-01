@@ -159,7 +159,7 @@ function getRandomGiveaway() {
 function updateEnigmaCounter() {
   const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
   let result = "";
-  const length = 10;
+  const length = 15;
   for (let i = 0; i < length; i++) {
     result += chars.charAt(Math.floor(Math.random() * chars.length));
   }
