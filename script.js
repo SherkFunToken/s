@@ -165,6 +165,41 @@ function startCounter() {
   }, 1000);
 }
 
+/* Admin Modal Handling */
+function initAdminModal() {
+  const adminBtn = document.getElementById("adminBtn");
+  const modal = document.getElementById("adminModal");
+  const closeBtn = document.getElementById("modalClose");
+  const adminForm = document.getElementById("adminForm");
+  
+  adminBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    modal.style.display = "block";
+  });
+  
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+  
+  window.addEventListener("click", (e) => {
+    if (e.target == modal) {
+      modal.style.display = "none";
+    }
+  });
+  
+  adminForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const username = document.getElementById("adminUser").value;
+    const password = document.getElementById("adminPass").value;
+    // Exemplo de credenciais: admin / password
+    if (username === "admin" && password === "password") {
+      window.location.href = "adm.html";
+    } else {
+      alert("Invalid credentials!");
+    }
+  });
+}
+
 /* Inicialização Geral */
 window.onload = function () {
   setInterval(rotateBanner, 7000);
@@ -174,5 +209,6 @@ window.onload = function () {
   getRandomSecondSection();
   getRandomGiveaway();
   startCounter();
+  initAdminModal();
   console.log("Site futurista carregado!");
 };
