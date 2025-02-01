@@ -81,36 +81,57 @@ body::before {
   100% { transform: translate(0, 0); }
 }
 
-/* MENU SUPERIOR */
-.header {
+/* MENU FLUTUANTE no TOPO à DIREITA */
+#floating-menu {
+  position: fixed;
+  top: 20px;
+  right: 20px;
   background: rgba(0, 0, 0, 0.9);
-  padding: 15px 0;
-  border-bottom: 4px solid #39ff14;
-  position: relative;
-  z-index: 1100;
+  border: 4px solid #39ff14;
+  border-radius: 8px;
+  z-index: 1200;
+  cursor: pointer;
+  transition: transform 0.3s;
 }
-.nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
+#floating-menu:hover {
+  transform: scale(1.05);
 }
-.nav ul li {
-  margin: 0 20px;
-}
-.nav ul li a {
-  color: #39ff14;
+#floating-menu .menu-button {
+  padding: 10px 20px;
   font-size: 1.2rem;
+  color: #39ff14;
+}
+#floating-menu .menu-dropdown {
+  display: none;
+  list-style: none;
+  background: rgba(0, 0, 0, 0.95);
+  border-top: 1px solid #39ff14;
+}
+#floating-menu:hover .menu-dropdown {
+  display: block;
+  animation: fadeIn 0.3s;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+#floating-menu .menu-dropdown li {
+  padding: 8px 15px;
+  text-align: right;
+}
+#floating-menu .menu-dropdown li a {
+  color: #ff1493;
   text-decoration: none;
   transition: color 0.3s, transform 0.3s;
 }
-.nav ul li a:hover {
-  color: #ff1493;
+#floating-menu .menu-dropdown li a:hover {
+  color: #39ff14;
   transform: scale(1.1);
 }
 
 /* Seção do Banner */
 .banner-section {
-  margin-top: 80px;
+  margin-top: 100px;
 }
 .banner-container {
   position: relative;
@@ -147,7 +168,7 @@ body::before {
   transform: scale(1.15);
 }
 
-/* Blocos de Conteúdo com borda neon giratória e animada */
+/* Blocos de Conteúdo com borda neon giratória e efeito hover */
 .content-box {
   width: 80%;
   max-width: 900px;
@@ -158,6 +179,7 @@ body::before {
   border-image-slice: 1;
   border-radius: 15px;
   animation: neonBorder 5s linear infinite, rotateContent 10s linear infinite;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 @keyframes neonBorder {
   0% { border-image-source: linear-gradient(45deg, #39ff14, #ff1493); }
@@ -168,6 +190,10 @@ body::before {
   0% { transform: rotate(0deg); }
   50% { transform: rotate(2deg); }
   100% { transform: rotate(0deg); }
+}
+.content-box:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 40px #ff1493;
 }
 .content-box ul {
   list-style: none;
@@ -227,7 +253,7 @@ a:hover {
   transform: scale(1.05);
 }
 
-/* Imagens das seções Meme e Giveaway */
+/* Imagens nas seções Meme e Giveaway */
 .meme-image {
   max-width: 100%;
   border-radius: 10px;
@@ -247,7 +273,7 @@ a:hover {
   box-shadow: 0 0 25px #39ff14;
 }
 
-/* Footer e contador */
+/* Footer e Contador */
 footer {
   text-align: center;
   padding: 25px;
@@ -268,17 +294,19 @@ footer p {
 /* Ao passar o mouse sobre "@SherkFunToken", exibe mvpico.png */
 #contact-token {
   position: relative;
+  display: inline-block;
 }
 #contact-token:hover::after {
   content: "";
   position: absolute;
-  top: -60px;
-  left: -60px;
-  width: 120px;
-  height: 120px;
+  top: -100px;
+  left: -100px;
+  width: 150px;
+  height: 150px;
   background: url("mvpico.png") no-repeat center center;
   background-size: contain;
   z-index: 1200;
+  pointer-events: none;
 }
 
 /* Botão flutuante fixo (canto inferior direito) */
@@ -301,7 +329,7 @@ footer p {
   box-shadow: 0 0 30px #ff1493;
 }
 
-/* Admin Modal */
+/* Admin Modal (pop-up centralizado) */
 .modal {
   display: none;
   position: fixed;
@@ -311,7 +339,7 @@ footer p {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background: rgba(0,0,0,0.85);
+  background: rgba(0, 0, 0, 0.85);
 }
 .modal-content {
   background: #0d0d0d;
@@ -369,8 +397,13 @@ main {
 
 /* Responsividade */
 @media (max-width: 768px) {
-  .nav ul li {
-    margin: 0 10px;
+  #floating-menu {
+    top: 10px;
+    right: 10px;
+  }
+  #floating-menu .menu-button {
+    font-size: 1rem;
+    padding: 8px 15px;
   }
   .button-highlightgame,
   .button {
