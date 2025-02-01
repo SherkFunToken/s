@@ -63,9 +63,9 @@ async function fetchCryptoPrices() {
   }
 }
 
-/* Conteúdo Dinâmico para as Seções */
+/* Conteúdo Dinâmico */
 
-/* Primeira Seção (Introdução) */
+/* Primeira Seção */
 function getRandomFirstSection() {
   const versions = [
     {
@@ -95,7 +95,7 @@ function getRandomFirstSection() {
   document.getElementById("dynamic-content-first").innerHTML = randomVersion.content;
 }
 
-/* Segunda Seção (Chamada para Ação) */
+/* Segunda Seção */
 function getRandomSecondSection() {
   const versions = [
     {
@@ -128,7 +128,7 @@ function getRandomSecondSection() {
   document.getElementById("dynamic-content-second").innerHTML = randomVersion.content;
 }
 
-/* Giveaway Section */
+/* Seção Giveaway */
 function getRandomGiveaway() {
   const versions = [
     {
@@ -155,16 +155,24 @@ function getRandomGiveaway() {
   document.getElementById("giveaway-content").innerHTML = randomVersion.content;
 }
 
+/* Visitor Counter */
+let count = 0;
+function startCounter() {
+  const counterElement = document.getElementById("counter");
+  setInterval(() => {
+    count++;
+    counterElement.textContent = "Visitor Count: " + count;
+  }, 1000);
+}
+
 /* Inicialização Geral */
 window.onload = function () {
-  // Inicia a rotação do banner a cada 7 segundos
   setInterval(rotateBanner, 7000);
-  // Busca os preços das criptomoedas e atualiza a cada 60 segundos
   fetchCryptoPrices();
   setInterval(fetchCryptoPrices, 60000);
-  // Insere os conteúdos dinâmicos
   getRandomFirstSection();
   getRandomSecondSection();
   getRandomGiveaway();
+  startCounter();
   console.log("Site futurista carregado!");
 };
