@@ -284,7 +284,7 @@ function initEnigmaModal() {
   });
 }
 
-/* Update Enigma Modal Text with dynamic phrases about Sherk Fun Token and mystery */
+/* Update Enigma Modal Text with dynamic phrases about $SFT and mystery */
 function updateEnigmaModalText() {
   const phrases = [
     "Every moment, Sherk Fun Token unveils a new secret...",
@@ -301,7 +301,27 @@ function updateEnigmaModalText() {
     "Can you decipher the enigma of the night?",
     "Shadows and neon: a puzzle without a solution.",
     "The night whispers secrets beyond the ordinary.",
-    "In the dance of light and darkness, mysteries abound."
+    "In the dance of light and darkness, mysteries abound.",
+    "Dive deep into the digital enigma that is $SFT.",
+    "A universe of secrets awaits within Sherk Fun Token.",
+    "Every byte hides a brilliant mystery.",
+    "Neon lights illuminate the path to $SFT.",
+    "Unlock the futuristic code, one glow at a time.",
+    "Where crypto and curiosity collide: $SFT.",
+    "In the realm of neon, every moment is a revelation.",
+    "Follow the luminous trail of Sherk Fun Token.",
+    "Mystery dances in every pixel of $SFT.",
+    "Let your mind wander through the neon labyrinth.",
+    "Every spark of $SFT ignites a thousand questions.",
+    "Secrets flow like electric currents through $SFT.",
+    "Embrace the chaos of the digital cosmos with $SFT.",
+    "The future is written in neon and coded in $SFT.",
+    "Each flash of light reveals a new puzzle.",
+    "Step beyond the ordinary—$SFT awaits your discovery.",
+    "The neon enigma of Sherk Fun Token beckons the brave.",
+    "Mysteries unfold in the rhythm of digital beats.",
+    "Let the neon night guide your quest for truth in $SFT.",
+    "In every shadow, a secret of $SFT is born."
   ];
   const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
   document.getElementById("enigmaModalText").textContent = randomPhrase;
