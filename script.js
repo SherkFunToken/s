@@ -254,7 +254,7 @@ function initEnigmaModal() {
   enigmaElement.addEventListener("click", () => {
     enigmaModal.style.display = "block";
     updateEnigmaModalText(); 
-    enigmaModal.dataset.interval = setInterval(updateEnigmaModalText, 2000);
+    enigmaModal.dataset.interval = setInterval(updateEnigmaModalText, 3000);
   });
 
   enigmaModalClose.addEventListener("click", () => {
