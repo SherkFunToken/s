@@ -1,12 +1,4 @@
-// Se desejar adicionar interações extras, scripts ou animações específicas, este arquivo pode ser expandido.
-// Por exemplo, se quiser implementar alguma lógica para alternar conteúdos ou controlar os elementos animados:
-
-window.onload = function () {
-  console.log("Site futurista carregado!");
-  // Adicione aqui quaisquer scripts adicionais conforme a necessidade.
-};
-
-/* Banner rotation script */
+/* Banner Rotation Script */
 let bannerIndex = 0;
 const banners = [
   { src: "https://token4fun.github.io/babysherk/banner1.gif", link: "https://sherkfun.io/" },
@@ -71,25 +63,30 @@ async function fetchCryptoPrices() {
   }
 }
 
-/* Conteúdo Dinâmico */
+/* Conteúdo Dinâmico para as Seções */
+
+/* Primeira Seção (Introdução) */
 function getRandomFirstSection() {
   const versions = [
     {
-      title: "Introducing the Neon Revolution: $SFT",
+      title: "Introducing the Community Favorite: Sherk Fun Token ($SFT)",
       content: `
-        <p>$SFT começou como um token de teste na Solana e se transformou em um farol do metaverso neon. Junte-se à revolução e experimente velocidade e inovação sem igual!</p>
+        <p>What started as a test token on the Solana network by the SherkFun.io team has blossomed into a highly cherished project, driven by the community. Today, $SFT stands as the flagship token of SherkFun.io, offering unique features that other tokens can only aspire to achieve!</p>
+        <p>With cutting-edge tools like the SherkFunBuyBot already operating flawlessly, $SFT is set to transform our interaction with blockchain technology. And there’s more – prepare for the upcoming SherkSnipe&Buy Bot!</p>
       `
     },
     {
-      title: "Enter the Neon Realm with $SFT",
+      title: "Discover the Sherk Fun Token ($SFT) Revolution",
       content: `
-        <p>Descubra a fusão entre blockchain e design futurista. $SFT não é apenas um token – é um movimento movido pela comunidade e tecnologia de ponta.</p>
+        <p>The journey began with a test token on Solana by the SherkFun.io team and quickly turned into a community favorite. $SFT now serves as the flagship token of SherkFun.io, offering features that outshine the competition.</p>
+        <p>Advanced tools like SherkFunBuyBot are already in action, and the future SherkSnipe&Buy Bot is on the horizon to streamline token purchases.</p>
       `
     },
     {
-      title: "Embrace the Future with $SFT",
+      title: "Get to Know the Sherk Fun Token ($SFT)",
       content: `
-        <p>Dos seus humildes inícios até um espetáculo neon, $SFT ilumina o caminho para uma experiência cripto revolucionária. Faça parte dessa jornada!</p>
+        <p>$SFT started as a test token and rapidly evolved into a beloved project, thanks to community support. Now, $SFT proudly stands as the flagship token, offering features that set it apart.</p>
+        <p>With the SherkFunBuyBot already running perfectly, and the upcoming SherkSnipe&Buy Bot promising speed and efficiency, join the revolution today!</p>
       `
     }
   ];
@@ -98,12 +95,13 @@ function getRandomFirstSection() {
   document.getElementById("dynamic-content-first").innerHTML = randomVersion.content;
 }
 
+/* Segunda Seção (Chamada para Ação) */
 function getRandomSecondSection() {
   const versions = [
     {
-      title: "Join the $SFT Movement 🚀",
+      title: "Ready to Join the $SFT Revolution? 🚀",
       content: `
-        <p>Entre no futuro neon com $SFT. Experimente o poder da comunidade, bots de negociação avançados e transações super-rápidas na rede Solana.</p>
+        <p>Step into the future with $SFT – the token taking the Solana blockchain by storm! With tools like SherkFunBuyBot and the upcoming SherkSnipe&Buy Bot, $SFT redefines the crypto experience.</p>
         <a href="https://sherkfun.io/token/6wY93bkRSk5KagCGTHrjLPCpbMWEPQGU9wrpsZ8tyftL" class="button-highlightgame">Buy $SFT Now</a>
         <a href="https://t.me/SherkFunCommunity" class="button">Join Telegram</a>
       `
@@ -111,7 +109,7 @@ function getRandomSecondSection() {
     {
       title: "Be Part of the Neon Wave 🌟",
       content: `
-        <p>$SFT lidera a investida rumo ao metaverso com tecnologia inovadora e uma abordagem comunitária. Não perca a chance de surfar nessa onda neon!</p>
+        <p>$SFT is more than a token – it’s a movement. Embrace the future with advanced trading tools and a community-driven ethos. Don't miss out on this neon revolution!</p>
         <a href="https://sherkfun.io/token/6wY93bkRSk5KagCGTHrjLPCpbMWEPQGU9wrpsZ8tyftL" class="button-highlightgame">Buy $SFT Now</a>
         <a href="https://t.me/SherkFunCommunity" class="button">Join Telegram</a>
       `
@@ -119,7 +117,7 @@ function getRandomSecondSection() {
     {
       title: "Experience the Neon Future with $SFT",
       content: `
-        <p>Desbloqueie um mundo de possibilidades com $SFT. Aproveite ferramentas exclusivas e uma plataforma segura e descentralizada que redefine as transações cripto.</p>
+        <p>Unlock a world of possibilities with $SFT. Enjoy exclusive tools and a secure, community-driven platform that’s setting the standard in the crypto space.</p>
         <a href="https://sherkfun.io/token/6wY93bkRSk5KagCGTHrjLPCpbMWEPQGU9wrpsZ8tyftL" class="button-highlightgame">Buy $SFT Now</a>
         <a href="https://t.me/SherkFunCommunity" class="button">Join Telegram</a>
       `
@@ -130,24 +128,25 @@ function getRandomSecondSection() {
   document.getElementById("dynamic-content-second").innerHTML = randomVersion.content;
 }
 
+/* Giveaway Section */
 function getRandomGiveaway() {
   const versions = [
     {
-      title: "Exclusive Giveaway!",
+      title: "Giveaway Announcement",
       content: `
-        <p>Após o bonding com Raydium, 0.5% do supply estará disponível para um novo holder! Compre acima de $50 e segure por 48h para participar.</p>
+        <p>After bonding $SFT to Raydium, 0.5% (5M) of the supply will be given to a new holder! Purchases over $50 qualify, so hold your tokens for at least 48 hours to participate.</p>
       `
     },
     {
-      title: "Neon Giveaway Alert!",
+      title: "Giveaway Announcement",
       content: `
-        <p>Prepare-se para um giveaway espetacular: 0.5% do supply do $SFT pode ser seu. Garanta sua compra acima de $50 e mantenha seus tokens por 48h!</p>
+        <p>Get ready for an exciting giveaway: after bonding to Raydium, 0.5% of $SFT’s total supply is up for grabs! Every purchase over $50 counts – hold your tokens for 48 hours to qualify.</p>
       `
     },
     {
-      title: "Win in the Neon Giveaway!",
+      title: "Giveaway Announcement",
       content: `
-        <p>Depois do bonding com Raydium, um giveaway de cair o queixo está chegando! Compre acima de $50 e segure por 48h para concorrer.</p>
+        <p>The exclusive $SFT Giveaway is coming once bonded to Raydium! Purchases above $50 will be eligible, and tokens must be held for a minimum of 48 hours to win.</p>
       `
     }
   ];
@@ -156,57 +155,16 @@ function getRandomGiveaway() {
   document.getElementById("giveaway-content").innerHTML = randomVersion.content;
 }
 
-/* Funcionalidade da Área de Administração (Modal) */
-function initAdminModal() {
-  const adminBtn = document.getElementById("adminBtn");
-  const modal = document.getElementById("adminModal");
-  const closeBtn = document.getElementById("modalClose");
-  const adminForm = document.getElementById("adminForm");
-  const adminArea = document.getElementById("adminArea");
-
-  adminBtn.addEventListener("click", () => {
-    modal.style.display = "block";
-  });
-  closeBtn.addEventListener("click", () => {
-    modal.style.display = "none";
-  });
-  window.addEventListener("click", (e) => {
-    if (e.target == modal) {
-      modal.style.display = "none";
-    }
-  });
-  adminForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const username = document.getElementById("adminUser").value;
-    const password = document.getElementById("adminPass").value;
-    // Validação simples (apenas para demonstração – não use em produção)
-    if (username === "admin" && password === "password") {
-      adminArea.style.display = "block";
-      adminForm.style.display = "none";
-    } else {
-      alert("Invalid credentials!");
-    }
-  });
-}
-
-/* Contador de Visitantes */
-function startCounter() {
-  let count = 0;
-  const counterElement = document.getElementById("counter");
-  setInterval(() => {
-    count++;
-    counterElement.textContent = "Visitor Count: " + count;
-  }, 1000);
-}
-
 /* Inicialização Geral */
 window.onload = function () {
+  // Inicia a rotação do banner a cada 7 segundos
   setInterval(rotateBanner, 7000);
+  // Busca os preços das criptomoedas e atualiza a cada 60 segundos
   fetchCryptoPrices();
   setInterval(fetchCryptoPrices, 60000);
+  // Insere os conteúdos dinâmicos
   getRandomFirstSection();
   getRandomSecondSection();
   getRandomGiveaway();
-  initAdminModal();
-  startCounter();
+  console.log("Site futurista carregado!");
 };
