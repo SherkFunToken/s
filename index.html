@@ -3,15 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="$SFT, powered by Sherk.fun – a revolutionary crypto experience in the futuristic metaverse." />
-    <meta name="keywords" content="cryptocurrency, Sherk Fun Token, $SFT, Solana, blockchain, neon, futuristic, metaverse" />
+    <meta
+      name="description"
+      content="$SFT, powered by Sherk.fun – a revolutionary crypto experience in the futuristic metaverse."
+    />
+    <meta
+      name="keywords"
+      content="cryptocurrency, Sherk Fun Token, $SFT, Solana, blockchain, neon, futuristic, metaverse"
+    />
     <meta name="author" content="Sherkfun" />
     <meta name="robots" content="index, follow" />
     <title>Sherk Fun Token ($SFT) - Futuristic Neon Experience</title>
     <link rel="icon" type="image/png" href="sherkhead.png" />
     <link rel="stylesheet" href="style.css" />
-    <!-- Futuristic font -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+    <!-- Futuristic Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- Crypto Ticker -->
@@ -21,10 +30,10 @@
       </marquee>
     </div>
 
-    <!-- Enigma Counter (appears between ticker and banner) -->
+    <!-- Enigma Counter (Guess and Win) -->
     <div id="enigma" class="enigma-counter"></div>
 
-    <!-- Floating Menu at Top Right -->
+    <!-- Floating Menu at Top Right (without "About") -->
     <div id="floating-menu">
       <div class="menu-button">Menu</div>
       <ul class="menu-dropdown">
@@ -73,7 +82,9 @@
       <!-- Game Hub Section -->
       <section id="game" class="content-box">
         <h2 class="neon-text">Sherk Fun Token Game Hub 🎮</h2>
-        <p>Experience the thrill of online games in the neon metaverse! Play:</p>
+        <p>
+          Experience the thrill of online games in the neon metaverse! Play:
+        </p>
         <ul>
           <li><strong>Sherk Pong</strong> – Fast-paced action with neon effects.</li>
           <li><strong>Sherk Invaders</strong> – Defend the ecosystem from haters. (Coming soon)</li>
@@ -164,12 +175,21 @@
       </div>
     </div>
 
-    <!-- Contact Modal (with countdown) -->
+    <!-- Contact Modal with Countdown -->
     <div id="contactModal" class="modal">
       <div class="modal-content">
         <span class="close" id="contactModalClose">&times;</span>
         <h2>Redirecting to Telegram Group</h2>
         <p id="contactCountdown">3</p>
+      </div>
+    </div>
+
+    <!-- Enigma Modal (opens when clicking on "Guess and Win:") -->
+    <div id="enigmaModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="enigmaModalClose">&times;</span>
+        <h2>Unravel the Mystery</h2>
+        <p id="enigmaModalText">Every moment, a new secret emerges... Dare to explore the unknown?</p>
       </div>
     </div>
 
