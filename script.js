@@ -284,18 +284,29 @@ function initEnigmaModal() {
   });
 }
 
-/* Update Enigma Modal Text with dynamic phrases */
+/* Update Enigma Modal Text with dynamic phrases about Sherk Fun Token and mystery */
 function updateEnigmaModalText() {
   const phrases = [
-    "Every moment, a new secret emerges...",
-    "Can you crack the code of the unknown?",
-    "The mystery deepens with every tick...",
-    "Dare to uncover what lies beyond the neon veil?",
-    "Your curiosity fuels the enigma; keep guessing!"
+    "Every moment, Sherk Fun Token unveils a new secret...",
+    "Unlock the neon mystery with $SFT.",
+    "Step into the future: Sherk Fun awaits.",
+    "In the electric glow, $SFT sparks innovation.",
+    "Discover the vibrant pulse of Sherk Fun Token.",
+    "Sherk Fun Token: where crypto meets enigma.",
+    "The blockchain mystery deepens with $SFT.",
+    "Neon dreams and digital secrets: that's $SFT.",
+    "Embrace the unknown with Sherk Fun Token.",
+    "$SFT shines in the heart of the metaverse.",
+    "Every flicker hides a riddle...",
+    "Can you decipher the enigma of the night?",
+    "Shadows and neon: a puzzle without a solution.",
+    "The night whispers secrets beyond the ordinary.",
+    "In the dance of light and darkness, mysteries abound."
   ];
   const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
   document.getElementById("enigmaModalText").textContent = randomPhrase;
 }
+
 
 /* Admin Modal Handling */
 function initAdminModal() {
