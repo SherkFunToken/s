@@ -60,18 +60,23 @@ body::before {
   background-size: contain;
   background-repeat: no-repeat;
   opacity: 0.7;
-  /* As velocidades e posições serão definidas via JS */
+  /* Velocidades e posições serão definidas via JavaScript */
 }
 
+/* Each element gets its own layer */
 .trovoes {
   background: url("fungame.png") no-repeat;
+  z-index: 10;
 }
 .galaxias {
   background: url("Sherkcoinfrente.png") no-repeat;
+  z-index: 20;
 }
 .metaverso {
   background: url("Sherk_NFT-removebg-preview.png") no-repeat;
+  z-index: 30;
 }
+
 
 
 /* Floating Menu at Top Right */
