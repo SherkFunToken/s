@@ -155,15 +155,15 @@ function getRandomGiveaway() {
   document.getElementById("giveaway-content").innerHTML = randomVersion.content;
 }
 
-/* Enigma Counter (random alphanumeric string) */
+/* Enigma Counter (random alphanumeric string with prefix "Guess and Win:") */
 function updateEnigmaCounter() {
   const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
   let result = "";
-  const length = 10; // length of the string
+  const length = 10;
   for (let i = 0; i < length; i++) {
     result += chars.charAt(Math.floor(Math.random() * chars.length));
   }
-  document.getElementById("enigma").textContent = "Enigma: " + result;
+  document.getElementById("enigma").textContent = "Guess and Win: " + result;
 }
 function startEnigmaCounter() {
   setInterval(updateEnigmaCounter, 100);
@@ -173,14 +173,12 @@ function startEnigmaCounter() {
 function initElementMovement() {
   const elements = document.querySelectorAll(".animated-elements .element");
   elements.forEach(el => {
-    // Set random initial position if not already set
     if (!el.style.left) {
       el.style.left = Math.random() * (window.innerWidth - 150) + "px";
     }
     if (!el.style.top) {
       el.style.top = Math.random() * (window.innerHeight - 150) + "px";
     }
-    // Set random velocity if not already set
     if (!el.dataset.vx) {
       el.dataset.vx = (Math.random() * 4 - 2).toFixed(2);
       el.dataset.vy = (Math.random() * 4 - 2).toFixed(2);
@@ -198,7 +196,6 @@ function initElementMovement() {
       posX += vx;
       posY += vy;
       
-      // Bounce off window edges
       if (posX <= 0 || posX + rect.width >= window.innerWidth) {
         vx = -vx;
       }
@@ -206,16 +203,12 @@ function initElementMovement() {
         vy = -vy;
       }
       
-      // Simple collision detection with other elements (invert only once)
       let collided = false;
       elements.forEach(other => {
         if (other !== el && !collided) {
           const r1 = el.getBoundingClientRect();
           const r2 = other.getBoundingClientRect();
-          if (!(r1.right < r2.left ||
-                r1.left > r2.right ||
-                r1.bottom < r2.top ||
-                r1.top > r2.bottom)) {
+          if (!(r1.right < r2.left || r1.left > r2.right || r1.bottom < r2.top || r1.top > r2.bottom)) {
             vx = -vx;
             vy = -vy;
             collided = true;
@@ -266,6 +259,44 @@ function initContactModal() {
   });
 }
 
+/* Enigma Modal Handling for Guess and Win */
+function initEnigmaModal() {
+  const enigmaElement = document.getElementById("enigma");
+  const enigmaModal = document.getElementById("enigmaModal");
+  const enigmaModalClose = document.getElementById("enigmaModalClose");
+
+  enigmaElement.addEventListener("click", () => {
+    enigmaModal.style.display = "block";
+    updateEnigmaModalText(); 
+    enigmaModal.dataset.interval = setInterval(updateEnigmaModalText, 2000);
+  });
+
+  enigmaModalClose.addEventListener("click", () => {
+    enigmaModal.style.display = "none";
+    clearInterval(enigmaModal.dataset.interval);
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === enigmaModal) {
+      enigmaModal.style.display = "none";
+      clearInterval(enigmaModal.dataset.interval);
+    }
+  });
+}
+
+/* Update Enigma Modal Text with dynamic phrases */
+function updateEnigmaModalText() {
+  const phrases = [
+    "Every moment, a new secret emerges...",
+    "Can you crack the code of the unknown?",
+    "The mystery deepens with every tick...",
+    "Dare to uncover what lies beyond the neon veil?",
+    "Your curiosity fuels the enigma; keep guessing!"
+  ];
+  const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
+  document.getElementById("enigmaModalText").textContent = randomPhrase;
+}
+
 /* Admin Modal Handling */
 function initAdminModal() {
   const adminBtn = document.getElementById("adminBtn");
@@ -292,7 +323,6 @@ function initAdminModal() {
     e.preventDefault();
     const username = document.getElementById("adminUser").value;
     const password = document.getElementById("adminPass").value;
-    // Example credentials: admin / password
     if (username === "admin" && password === "password") {
       window.location.href = "adm.html";
     } else {
@@ -312,6 +342,7 @@ window.onload = function () {
   startEnigmaCounter();
   initAdminModal();
   initContactModal();
+  initEnigmaModal();
   initElementMovement();
   console.log("Futuristic site loaded!");
 };
