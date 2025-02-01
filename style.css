@@ -1,11 +1,11 @@
-/* Reset básico */
+/* Basic Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Configurações gerais */
+/* Global Styles */
 body {
   font-family: 'Roboto', sans-serif;
   color: #e0e0e0;
@@ -14,7 +14,7 @@ body {
   overflow-x: hidden;
 }
 
-/* BACKGROUND: back.gif com 50% de opacidade */
+/* BACKGROUND: back.gif with 50% opacity */
 body::before {
   content: "";
   position: fixed;
@@ -28,7 +28,7 @@ body::before {
   z-index: -2;
 }
 
-/* Crypto Ticker com neon grosso */
+/* Crypto Ticker with bold neon */
 .crypto-ticker {
   position: fixed;
   top: 0;
@@ -48,11 +48,11 @@ body::before {
   100% { text-shadow: 0 0 5px #39ff14; }
 }
 
-/* Estilos para ticker percentual negativo */
+/* For negative percentages in ticker */
 .negative { color: red; }
 .positive { color: #39ff14; }
 
-/* Elementos animados no fundo com PNG (movendo randomicamente e com colisão) */
+/* Animated PNG elements (random movement and collision) */
 .animated-elements .element {
   position: absolute;
   width: 150px;
@@ -60,19 +60,19 @@ body::before {
   background-size: contain;
   background-repeat: no-repeat;
   opacity: 0.7;
-  /* Inicialmente posicionados aleatoriamente */
-  left: calc(100vw * var(--rand-x));
-  top: calc(100vh * var(--rand-y));
 }
-@keyframes floatAcross {
-  0% { transform: translate(0, 0); opacity: 0.6; }
-  50% { transform: translate(50vw, 50vh); opacity: 1; }
-  100% { transform: translate(0, 0); opacity: 0.6; }
+/* Specific PNG backgrounds with animation duration set via JS */
+.trovoes {
+  background: url("fungame.png") no-repeat;
+}
+.galaxias {
+  background: url("Sherkcoinfrente.png") no-repeat;
+}
+.metaverso {
+  background: url("Sherk_NFT-removebg-preview.png") no-repeat;
 }
 
-/* (Velocidade e duração serão definidas via script.js para movimento aleatório) */
-
-/* MENU FLUTUANTE no TOPO à DIREITA */
+/* Floating Menu at Top Right */
 #floating-menu {
   position: fixed;
   top: 20px;
@@ -120,7 +120,7 @@ body::before {
   transform: scale(1.1);
 }
 
-/* Seção do Banner */
+/* Banner Section */
 .banner-section {
   margin-top: 100px;
 }
@@ -159,7 +159,7 @@ body::before {
   transform: scale(1.15);
 }
 
-/* Blocos de Conteúdo com borda neon fixa (base #39ff14) e animação de mudança de cor */
+/* Content Boxes with fixed neon border (base #39ff14) and animated color change */
 .content-box {
   width: 80%;
   max-width: 900px;
@@ -195,7 +195,7 @@ body::before {
   text-align: left;
 }
 
-/* Títulos com efeito neon */
+/* Neon Headings */
 .neon-text {
   font-family: 'Orbitron', sans-serif;
   color: #39ff14;
@@ -205,7 +205,7 @@ body::before {
   font-size: 2rem;
 }
 
-/* Botões e links com animação */
+/* Buttons and Links with animation */
 .button-highlightgame,
 .button {
   display: inline-block;
@@ -243,7 +243,7 @@ a:hover {
   transform: scale(1.05);
 }
 
-/* Imagens nas seções Meme e Giveaway */
+/* Images in Meme and Giveaway sections */
 .meme-image {
   max-width: 100%;
   border-radius: 10px;
@@ -263,7 +263,7 @@ a:hover {
   box-shadow: 0 0 25px #39ff14;
 }
 
-/* Footer e Contador (Enigma) */
+/* Footer and Enigma Counter */
 footer {
   text-align: center;
   padding: 25px;
@@ -281,7 +281,7 @@ footer p {
   text-shadow: 0 0 12px #39ff14;
 }
 
-/* Ao passar o mouse sobre "@SherkFunToken", exibe mvpico.png */
+/* Hover effect for "@SherkFunToken": display mvpico.png */
 #contact-token {
   position: relative;
   display: inline-block;
@@ -299,7 +299,7 @@ footer p {
   pointer-events: none;
 }
 
-/* Botão flutuante fixo (canto inferior direito) */
+/* Floating Contact Button */
 #floating-button {
   position: fixed;
   bottom: 20px;
@@ -319,7 +319,47 @@ footer p {
   box-shadow: 0 0 30px #ff1493;
 }
 
-/* Admin Modal (pop-up centralizado) */
+/* Contact Modal for Countdown */
+#contactModal {
+  display: none;
+  position: fixed;
+  z-index: 1300;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.85);
+}
+#contactModal .modal-content {
+  background: #0d0d0d;
+  margin: 20% auto;
+  padding: 20px;
+  border: 4px solid #39ff14;
+  border-radius: 10px;
+  max-width: 400px;
+  position: relative;
+  box-shadow: 0 0 30px #39ff14;
+  text-align: center;
+}
+#contactModal .modal-content h2 {
+  color: #39ff14;
+  margin-bottom: 20px;
+}
+#contactModal .modal-content p {
+  font-size: 2rem;
+  margin: 20px 0;
+}
+#contactModal .close {
+  color: #ff1493;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Admin Modal (pop-up for admin login) */
 .modal {
   display: none;
   position: fixed;
@@ -379,13 +419,13 @@ footer p {
   cursor: pointer;
 }
 
-/* Espaçamento para o conteúdo principal */
+/* Main content spacing */
 main {
   padding-top: 120px;
   padding-bottom: 100px;
 }
 
-/* Responsividade */
+/* Responsive adjustments */
 @media (max-width: 768px) {
   #floating-menu {
     top: 10px;
