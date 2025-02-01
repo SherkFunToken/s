@@ -52,7 +52,7 @@ body::before {
 .negative { color: red; }
 .positive { color: #39ff14; }
 
-/* Animated PNG elements (random movement and collision) */
+/* Animated PNG elements with random movement and collision */
 .animated-elements .element {
   position: absolute;
   width: 150px;
@@ -61,16 +61,7 @@ body::before {
   background-repeat: no-repeat;
   opacity: 0.7;
 }
-/* Specific PNG backgrounds with animation duration set via JS */
-.trovoes {
-  background: url("fungame.png") no-repeat;
-}
-.galaxias {
-  background: url("Sherkcoinfrente.png") no-repeat;
-}
-.metaverso {
-  background: url("Sherk_NFT-removebg-preview.png") no-repeat;
-}
+/* (Velocities and positions are set via JS in initElementMovement) */
 
 /* Floating Menu at Top Right */
 #floating-menu {
@@ -120,9 +111,18 @@ body::before {
   transform: scale(1.1);
 }
 
+/* Enigma Counter (placed below the ticker, above banner) */
+.enigma-counter {
+  font-size: 2rem;
+  text-align: center;
+  margin: 10px 0;
+  color: #39ff14;
+  text-shadow: 0 0 12px #39ff14;
+}
+
 /* Banner Section */
 .banner-section {
-  margin-top: 100px;
+  margin-top: 20px;
 }
 .banner-container {
   position: relative;
@@ -159,7 +159,7 @@ body::before {
   transform: scale(1.15);
 }
 
-/* Content Boxes with fixed neon border (base #39ff14) and animated color change */
+/* Content Boxes with fixed neon border and animated color change */
 .content-box {
   width: 80%;
   max-width: 900px;
@@ -263,7 +263,7 @@ a:hover {
   box-shadow: 0 0 25px #39ff14;
 }
 
-/* Footer and Enigma Counter */
+/* Footer */
 footer {
   text-align: center;
   padding: 25px;
@@ -273,12 +273,6 @@ footer {
 }
 footer p {
   margin: 12px 0;
-}
-.counter {
-  font-size: 1.4rem;
-  margin-bottom: 12px;
-  color: #39ff14;
-  text-shadow: 0 0 12px #39ff14;
 }
 
 /* Hover effect for "@SherkFunToken": display mvpico.png */
@@ -359,7 +353,7 @@ footer p {
   cursor: pointer;
 }
 
-/* Admin Modal (pop-up for admin login) */
+/* Admin Modal (for admin login) */
 .modal {
   display: none;
   position: fixed;
@@ -419,13 +413,13 @@ footer p {
   cursor: pointer;
 }
 
-/* Main content spacing */
+/* Main Content Spacing */
 main {
   padding-top: 120px;
   padding-bottom: 100px;
 }
 
-/* Responsive adjustments */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
   #floating-menu {
     top: 10px;
