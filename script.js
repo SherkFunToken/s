@@ -163,13 +163,13 @@ function updateEnigmaCounter() {
   for (let i = 0; i < length; i++) {
     result += chars.charAt(Math.floor(Math.random() * chars.length));
   }
-  document.getElementById("counter").textContent = "Enigma: " + result;
+  document.getElementById("enigma").textContent = "Enigma: " + result;
 }
 function startEnigmaCounter() {
   setInterval(updateEnigmaCounter, 100);
 }
 
-/* Initialize movement for PNG elements with collision detection */
+/* Initialize movement for PNG elements with simple collision detection */
 function initElementMovement() {
   const elements = document.querySelectorAll(".animated-elements .element");
   elements.forEach(el => {
@@ -182,7 +182,7 @@ function initElementMovement() {
     }
     // Set random velocity if not already set
     if (!el.dataset.vx) {
-      el.dataset.vx = (Math.random() * 4 - 2).toFixed(2); // between -2 and 2 px/frame
+      el.dataset.vx = (Math.random() * 4 - 2).toFixed(2);
       el.dataset.vy = (Math.random() * 4 - 2).toFixed(2);
     }
   });
@@ -194,11 +194,10 @@ function initElementMovement() {
       let posX = parseFloat(el.style.left);
       let posY = parseFloat(el.style.top);
       const rect = el.getBoundingClientRect();
-
-      // Update position
+      
       posX += vx;
       posY += vy;
-
+      
       // Bounce off window edges
       if (posX <= 0 || posX + rect.width >= window.innerWidth) {
         vx = -vx;
@@ -206,9 +205,11 @@ function initElementMovement() {
       if (posY <= 0 || posY + rect.height >= window.innerHeight) {
         vy = -vy;
       }
-      // Simple collision detection with other elements
+      
+      // Simple collision detection with other elements (invert only once)
+      let collided = false;
       elements.forEach(other => {
-        if (other !== el) {
+        if (other !== el && !collided) {
           const r1 = el.getBoundingClientRect();
           const r2 = other.getBoundingClientRect();
           if (!(r1.right < r2.left ||
@@ -217,6 +218,7 @@ function initElementMovement() {
                 r1.top > r2.bottom)) {
             vx = -vx;
             vy = -vy;
+            collided = true;
           }
         }
       });
@@ -245,7 +247,7 @@ function initContactModal() {
     const interval = setInterval(() => {
       count--;
       countdownElem.textContent = count;
-      if(count <= 0) {
+      if (count <= 0) {
         clearInterval(interval);
         contactModal.style.display = "none";
         window.location.href = "https://t.me/SherkFunCommunity";
@@ -258,7 +260,7 @@ function initContactModal() {
   });
   
   window.addEventListener("click", (e) => {
-    if(e.target === contactModal) {
+    if (e.target === contactModal) {
       contactModal.style.display = "none";
     }
   });
