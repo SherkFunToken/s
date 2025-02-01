@@ -60,8 +60,19 @@ body::before {
   background-size: contain;
   background-repeat: no-repeat;
   opacity: 0.7;
-  /* Velocities and positions set via JS */
+  /* As velocidades e posições serão definidas via JS */
 }
+
+.trovoes {
+  background: url("fungame.png") no-repeat;
+}
+.galaxias {
+  background: url("Sherkcoinfrente.png") no-repeat;
+}
+.metaverso {
+  background: url("Sherk_NFT-removebg-preview.png") no-repeat;
+}
+
 
 /* Floating Menu at Top Right */
 #floating-menu {
