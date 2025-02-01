@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-/* Configurações gerais do body */
+/* Configurações gerais */
 body {
   font-family: 'Roboto', sans-serif;
   color: #e0e0e0;
@@ -28,15 +28,15 @@ body::before {
   z-index: -2;
 }
 
-/* Crypto Ticker com efeito neon */
+/* Crypto Ticker com neon grosso */
 .crypto-ticker {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 10px 0;
+  padding: 15px 0;
   background: #111;
-  border-bottom: 2px solid #39ff14;
-  font-size: 18px;
+  border-bottom: 4px solid #39ff14;
+  font-size: 20px;
   text-align: center;
   z-index: 1000;
   color: #39ff14;
@@ -81,51 +81,36 @@ body::before {
   100% { transform: translate(0, 0); }
 }
 
-/* MENU FIXO à direita */
-#menu-container {
-  position: fixed;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.8);
-  padding: 10px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+/* MENU SUPERIOR */
+.header {
+  background: rgba(0, 0, 0, 0.9);
+  padding: 15px 0;
+  border-bottom: 4px solid #39ff14;
+  position: relative;
   z-index: 1100;
 }
-#menu-container .menu-label {
+.nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+.nav ul li {
+  margin: 0 20px;
+}
+.nav ul li a {
   color: #39ff14;
   font-size: 1.2rem;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-#menu-container .menu-label:hover {
-  transform: scale(1.1);
-}
-#menu-container .menu-dropdown {
-  display: none;
-  list-style: none;
-  margin-top: 10px;
-}
-#menu-container:hover .menu-dropdown {
-  display: block;
-}
-#menu-container .menu-dropdown li {
-  margin: 5px 0;
-}
-#menu-container .menu-dropdown li a {
-  color: #ff1493;
   text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.3s;
+  transition: color 0.3s, transform 0.3s;
 }
-#menu-container .menu-dropdown li a:hover {
-  color: #39ff14;
+.nav ul li a:hover {
+  color: #ff1493;
+  transform: scale(1.1);
 }
 
 /* Seção do Banner */
 .banner-section {
-  margin-top: 60px;
+  margin-top: 80px;
 }
 .banner-container {
   position: relative;
@@ -133,7 +118,7 @@ body::before {
   margin: 20px auto;
   overflow: hidden;
   border-radius: 10px;
-  box-shadow: 0 0 20px #39ff14;
+  box-shadow: 0 0 30px #39ff14;
 }
 .banner-container img {
   width: 100%;
@@ -149,29 +134,29 @@ body::before {
   transform: translateY(-50%);
 }
 .banner-nav button {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   border: none;
-  padding: 10px;
-  font-size: 2rem;
+  padding: 12px;
+  font-size: 2.2rem;
   color: #39ff14;
   cursor: pointer;
   transition: background 0.3s, transform 0.3s;
 }
 .banner-nav button:hover {
   background: rgba(0, 0, 0, 0.8);
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
 
-/* Blocos de Conteúdo com Borda Neon Animada e Rotação */
+/* Blocos de Conteúdo com borda neon giratória e animada */
 .content-box {
   width: 80%;
   max-width: 900px;
-  margin: 30px auto;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.7);
-  border: 2px solid;
+  margin: 40px auto;
+  padding: 25px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 4px solid;
   border-image-slice: 1;
-  border-radius: 10px;
+  border-radius: 15px;
   animation: neonBorder 5s linear infinite, rotateContent 10s linear infinite;
 }
 @keyframes neonBorder {
@@ -198,40 +183,41 @@ body::before {
 .neon-text {
   font-family: 'Orbitron', sans-serif;
   color: #39ff14;
-  text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #ff1493, 0 0 40px #ff1493;
+  text-shadow: 0 0 8px #39ff14, 0 0 15px #39ff14, 0 0 25px #ff1493, 0 0 35px #ff1493;
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  font-size: 2rem;
 }
 
 /* Botões e links com animação */
 .button-highlightgame,
 .button {
   display: inline-block;
-  padding: 12px 24px;
-  margin: 10px;
+  padding: 14px 28px;
+  margin: 12px;
   font-size: 1rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.3s, background 0.3s;
 }
 .button-highlightgame {
   background: #ff1493;
   color: #fff;
-  box-shadow: 0 0 10px #ff1493;
+  box-shadow: 0 0 15px #ff1493;
 }
 .button-highlightgame:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 20px #ff1493;
+  box-shadow: 0 0 25px #ff1493;
 }
 .button {
   background: #1e90ff;
   color: #fff;
-  box-shadow: 0 0 10px #1e90ff;
+  box-shadow: 0 0 15px #1e90ff;
 }
 .button:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 20px #1e90ff;
+  box-shadow: 0 0 25px #1e90ff;
 }
 a {
   transition: color 0.3s, transform 0.3s;
@@ -241,18 +227,16 @@ a:hover {
   transform: scale(1.05);
 }
 
-/* Imagem da área Meme */
+/* Imagens das seções Meme e Giveaway */
 .meme-image {
   max-width: 100%;
   border-radius: 10px;
-  box-shadow: 0 0 15px #39ff14;
+  box-shadow: 0 0 25px #39ff14;
   transition: transform 0.3s;
 }
 .meme-image:hover {
   transform: scale(1.05);
 }
-
-/* Imagem do Giveaway */
 .giveaway-img {
   text-align: center;
   margin-top: 20px;
@@ -260,44 +244,44 @@ a:hover {
 .giveaway-img img {
   max-width: 100%;
   border-radius: 10px;
-  box-shadow: 0 0 15px #39ff14;
+  box-shadow: 0 0 25px #39ff14;
 }
 
 /* Footer e contador */
 footer {
   text-align: center;
-  padding: 20px;
+  padding: 25px;
   background: #111;
-  border-top: 2px solid #39ff14;
-  margin-top: 30px;
+  border-top: 4px solid #39ff14;
+  margin-top: 40px;
 }
 footer p {
-  margin: 10px 0;
+  margin: 12px 0;
 }
 .counter {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+  font-size: 1.4rem;
+  margin-bottom: 12px;
   color: #39ff14;
-  text-shadow: 0 0 10px #39ff14;
+  text-shadow: 0 0 12px #39ff14;
 }
 
-/* Ao passar o mouse sobre "@SherkFunToken", exibe a imagem me.png */
+/* Ao passar o mouse sobre "@SherkFunToken", exibe mvpico.png */
 #contact-token {
   position: relative;
 }
 #contact-token:hover::after {
   content: "";
   position: absolute;
-  top: -50px;
-  left: -50px;
-  width: 100px;
-  height: 100px;
-  background: url("me.png") no-repeat center center;
+  top: -60px;
+  left: -60px;
+  width: 120px;
+  height: 120px;
+  background: url("mvpico.png") no-repeat center center;
   background-size: contain;
   z-index: 1200;
 }
 
-/* Botão flutuante fixo no canto inferior direito */
+/* Botão flutuante fixo (canto inferior direito) */
 #floating-button {
   position: fixed;
   bottom: 20px;
@@ -305,41 +289,98 @@ footer p {
   background: #ff1493;
   color: #fff;
   border: none;
-  padding: 15px 20px;
+  padding: 16px 24px;
   border-radius: 50px;
-  box-shadow: 0 0 10px #ff1493;
+  box-shadow: 0 0 15px #ff1493;
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
   z-index: 1200;
 }
 #floating-button:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 20px #ff1493;
+  box-shadow: 0 0 30px #ff1493;
+}
+
+/* Admin Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1300;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0,0,0,0.85);
+}
+.modal-content {
+  background: #0d0d0d;
+  margin: 10% auto;
+  padding: 20px;
+  border: 4px solid #39ff14;
+  border-radius: 10px;
+  max-width: 400px;
+  position: relative;
+  box-shadow: 0 0 30px #39ff14;
+}
+.modal-content h2 {
+  color: #39ff14;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.modal-content input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 2px solid #39ff14;
+  border-radius: 5px;
+  background: #222;
+  color: #e0e0e0;
+  font-size: 1rem;
+}
+.modal-content button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: #1e90ff;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.modal-content button:hover {
+  background: #1c86ee;
+}
+.close {
+  color: #ff1493;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2rem;
+  cursor: pointer;
 }
 
 /* Espaçamento para o conteúdo principal */
 main {
-  padding-top: 100px;
-  padding-bottom: 80px;
+  padding-top: 120px;
+  padding-bottom: 100px;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-  #menu-container {
-    top: 40%;
+  .nav ul li {
+    margin: 0 10px;
   }
   .button-highlightgame,
   .button {
-    padding: 10px 20px;
+    padding: 12px 20px;
     font-size: 0.9rem;
   }
 }
 @media (max-width: 480px) {
-  #menu-container {
-    top: 30%;
-  }
   .banner-nav button {
     font-size: 1.5rem;
-    padding: 5px;
+    padding: 8px;
   }
 }
