@@ -2,28 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <meta
-      name="description"
-      content="$SFT, powered by Sherk.fun – a revolutionary crypto experience in the futuristic metaverse."
-    />
-    <meta
-      name="keywords"
-      content="cryptocurrency, Sherk Fun Token, $SFT, Solana, blockchain, neon, futuristic, metaverse"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="$SFT, powered by Sherk.fun – a revolutionary crypto experience in the futuristic metaverse." />
+    <meta name="keywords" content="cryptocurrency, Sherk Fun Token, $SFT, Solana, blockchain, neon, futuristic, metaverse" />
     <meta name="author" content="Sherkfun" />
     <meta name="robots" content="index, follow" />
     <title>Sherk Fun Token ($SFT) - Futuristic Neon Experience</title>
     <link rel="icon" type="image/png" href="sherkhead.png" />
     <link rel="stylesheet" href="style.css" />
     <!-- Futuristic font -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
   </head>
   <body>
     <!-- Crypto Ticker -->
@@ -32,6 +20,9 @@
         Loading cryptocurrency prices...
       </marquee>
     </div>
+
+    <!-- Enigma Counter (appears between ticker and banner) -->
+    <div id="enigma" class="enigma-counter"></div>
 
     <!-- Floating Menu at Top Right -->
     <div id="floating-menu">
@@ -59,11 +50,7 @@
       <section id="home" class="banner-section">
         <div class="banner-container">
           <a id="banner-link" href="https://sherkfun.io/">
-            <img
-              id="banner"
-              src="https://token4fun.github.io/babysherk/banner1.gif"
-              alt="Neon Banner"
-            />
+            <img id="banner" src="https://token4fun.github.io/babysherk/banner1.gif" alt="Neon Banner" />
           </a>
           <div class="banner-nav">
             <button class="prev" onclick="prevBanner()">&#10094;</button>
@@ -86,9 +73,7 @@
       <!-- Game Hub Section -->
       <section id="game" class="content-box">
         <h2 class="neon-text">Sherk Fun Token Game Hub 🎮</h2>
-        <p>
-          Experience the thrill of online games in the neon metaverse! Play:
-        </p>
+        <p>Experience the thrill of online games in the neon metaverse! Play:</p>
         <ul>
           <li><strong>Sherk Pong</strong> – Fast-paced action with neon effects.</li>
           <li><strong>Sherk Invaders</strong> – Defend the ecosystem from haters. (Coming soon)</li>
@@ -96,10 +81,7 @@
           <li><strong>Sherkeroids</strong> – Space combat in neon style. (Coming soon)</li>
           <li><strong>Sherk Raid</strong> – Navigate epic battles in the metaverse. (Coming soon)</li>
         </ul>
-        <a
-          href="https://sherkfuntoken.github.io/site/game.html"
-          class="button-highlightgame"
-          >Play Now</a>
+        <a href="https://sherkfuntoken.github.io/site/game.html" class="button-highlightgame">Play Now</a>
       </section>
 
       <!-- Giveaway Section -->
@@ -156,7 +138,6 @@
 
     <!-- Footer with hover effect to display mvpico.png -->
     <footer id="contato">
-      <div id="counter" class="counter">Enigma:</div>
       <p>
         &copy; 2024/2025 Sherk Fun Token ($SFT) | Powered by
         <a href="https://sherkfun.io" target="_blank">Sherkfun.io</a>
@@ -167,10 +148,10 @@
       </p>
     </footer>
 
-    <!-- Floating Contact Button (opens a countdown modal) -->
-    <button id="floating-button">Contact</button>
+    <!-- Floating Contact Button -->
+    <button id="floating-button" onclick="initContactModal()">Contact</button>
 
-    <!-- Admin Modal (pop-up for admin login) -->
+    <!-- Admin Modal (for admin login) -->
     <div id="adminModal" class="modal">
       <div class="modal-content">
         <span class="close" id="modalClose">&times;</span>
@@ -183,7 +164,7 @@
       </div>
     </div>
 
-    <!-- Contact Modal (pop-up with countdown) -->
+    <!-- Contact Modal (with countdown) -->
     <div id="contactModal" class="modal">
       <div class="modal-content">
         <span class="close" id="contactModalClose">&times;</span>
