@@ -361,6 +361,29 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  /* Click-to-Scroll Behavior for MiniCards */
+  const miniCards = document.querySelectorAll('.mini-card');
+  const miniCardContainer = document.querySelector('.mini-card-grid');
+  miniCards.forEach(card => {
+    card.addEventListener('click', (event) => {
+      // Se o clique for em um link dentro do card, não altera o scroll
+      if (event.target.tagName.toLowerCase() === 'a') return;
+      
+      const cardRect = card.getBoundingClientRect();
+      const clickX = event.clientX - cardRect.left;
+      const halfWidth = cardRect.width / 2;
+      // Define o deslocamento desejado (em pixels)
+      const scrollOffset = 150;
+      if (clickX < halfWidth) {
+        // Clique na metade esquerda: rolar para a esquerda
+        miniCardContainer.scrollBy({ left: -scrollOffset, behavior: 'smooth' });
+      } else {
+        // Clique na metade direita: rolar para a direita
+        miniCardContainer.scrollBy({ left: scrollOffset, behavior: 'smooth' });
+      }
+    });
+  });
+  
   // Initialization
   setInterval(rotateBanner, 7000);
   fetchCryptoPrices();
