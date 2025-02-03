@@ -242,7 +242,7 @@
     <!-- Script do Splash Modal -->
     <script>
       // Texto de inicialização (splash) em inglês aprimorado
-      let text = 
+      let text = `
 Initializing Sherk Fun Token System...
 Connecting to Sherkfun.io... [OK]
 Verifying Blockchain Integrity... [OK]
@@ -251,7 +251,7 @@ Securing Virtual Liquidity Pool... [OK]
 Deploy tokens at Sherkfun.io... [OK]
 Welcome to the new crypto frontier.
 Your journey begins now.
-      ;
+      `;
       
       let index = 0;
       // Tempo de digitação por caractere (em ms)
@@ -277,7 +277,7 @@ Your journey begins now.
         const totalFadeDuration = text.length * typeDelay + fadeDelay;
         const splashModal = document.getElementById("splashModal");
         // Configura a transição de opacidade com a duração calculada
-        splashModal.style.transition = opacity ${totalFadeDuration}ms linear;
+        splashModal.style.transition = `opacity ${totalFadeDuration}ms linear`;
         // Permite a interação com o conteúdo principal enquanto o splash modal fade-out ocorre
         splashModal.style.pointerEvents = "none";
         // Inicia o fade-out imediatamente
