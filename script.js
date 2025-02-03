@@ -72,21 +72,24 @@ function getRandomFirstSection() {
       title: "Introducing the Community Favorite: Sherk Fun Token ($SFT)",
       content: `
         <p>What started as a test token on the Solana network by the SherkFun.io team has blossomed into a highly cherished project, driven by the community. Today, $SFT stands as the flagship token of SherkFun.io, offering unique features that other tokens can only aspire to achieve!</p>
-        <p>With cutting-edge tools like the SherkFunBuyBot already operating flawlessly, $SFT is set to transform our interaction with blockchain technology. And there’s more – prepare for the upcoming SherkSnipe&Buy Bot!</p>
+        <p>With cutting-edge tools like the SherkFunBuyBot already operating flawlessly, $SFT is set to transform our interaction with blockchain technology. But that’s not all—get ready for the upcoming SherkSnipe&Buy Bot, crafted to enhance token purchases with unmatched speed, intelligence, and efficiency.</p>
+        <p>As the pioneering token on SherkFun.io, $SFT is charting a new course for future projects, redefining tokenomics, and revolutionizing token launches on the Solana network. Join us today and become part of this incredible movement!</p>
       `
     },
     {
       title: "Discover the Sherk Fun Token ($SFT) Revolution",
       content: `
-        <p>The journey began with a test token on Solana by the SherkFun.io team and quickly turned into a community favorite. $SFT now serves as the flagship token of SherkFun.io, offering features that outshine the competition.</p>
-        <p>Advanced tools like SherkFunBuyBot are already in action, and the future SherkSnipe&Buy Bot is on the horizon to streamline token purchases.</p>
+        <p>The journey of the SherkFun.io team began with a test token on the Solana network, which quickly turned into a community favorite. Today, $SFT proudly serves as the flagship token of SherkFun.io, offering innovative features that other tokens can only dream of.</p>
+        <p>With advanced tools such as the SherkFunBuyBot already up and running smoothly, $SFT is poised to reshape how we engage with blockchain technology. And the excitement doesn’t stop there—prepare for the launch of the SherkSnipe&Buy Bot, designed to streamline token purchases with greater speed and precision than ever before.</p>
+        <p>As the trailblazing token on SherkFun.io, $SFT is leading the charge for future projects, reimagining tokenomics, and revolutionizing how token launches take place on Solana. Be a part of this movement and join the revolution today!</p>
       `
     },
     {
       title: "Get to Know the Sherk Fun Token ($SFT)",
       content: `
-        <p>$SFT started as a test token and rapidly evolved into a beloved project, thanks to community support. Now, $SFT proudly stands as the flagship token, offering features that set it apart.</p>
-        <p>With the SherkFunBuyBot already running perfectly, and the upcoming SherkSnipe&Buy Bot promising speed and efficiency, join the revolution today!</p>
+        <p>$SFT started as a simple test token on the Solana network by the SherkFun.io team, and quickly evolved into a beloved project supported by the community. Now, $SFT proudly stands as the flagship token of SherkFun.io, offering features that outshine other tokens!</p>
+        <p>With advanced tools like the SherkFunBuyBot already running perfectly, $SFT is redefining the way we interact with blockchain technology. And the excitement continues with the launch of the SherkSnipe&Buy Bot, designed to make token purchases faster, smarter, and more efficient than ever before.</p>
+        <p>As the first token on SherkFun.io, $SFT is setting the stage for future projects, transforming tokenomics, and revolutionizing the way token launches are conducted on Solana. Don’t miss out—join the revolution now and be part of this incredible journey!</p>
       `
     }
   ];
@@ -101,9 +104,10 @@ function getRandomSecondSection() {
     {
       title: "Ready to Join the $SFT Revolution? 🚀",
       content: `
-        <p>Step into the future with $SFT – the token taking the Solana blockchain by storm! With tools like SherkFunBuyBot and the upcoming SherkSnipe&Buy Bot, $SFT redefines the crypto experience.</p>
+        <p>Step into the future with $SFT, the token that’s taking the Solana blockchain by storm! Powered by Sherk.fun, $SFT is not just another token—it's a game-changer for community-driven projects. With tools like the SherkFunBuyBot already active and the upcoming SherkSnipe&Buy Bot on the horizon, $SFT is redefining the way we interact with the crypto space.</p>
         <a href="https://sherkfun.io/token/6wY93bkRSk5KagCGTHrjLPCpbMWEPQGU9wrpsZ8tyftL" class="button-highlightgame">Buy $SFT Now</a>
         <a href="https://t.me/SherkFunCommunity" class="button">Join Telegram</a>
+        <p>Join the revolution early and take advantage of exclusive rewards. With $SFT, the future of crypto is now!</p>
       `
     },
     {
@@ -112,6 +116,7 @@ function getRandomSecondSection() {
         <p>$SFT is more than a token – it’s a movement. Embrace the future with advanced trading tools and a community-driven ethos. Don't miss out on this neon revolution!</p>
         <a href="https://sherkfun.io/token/6wY93bkRSk5KagCGTHrjLPCpbMWEPQGU9wrpsZ8tyftL" class="button-highlightgame">Buy $SFT Now</a>
         <a href="https://t.me/SherkFunCommunity" class="button">Join Telegram</a>
+        <p>Get ahead of the game, unlock exclusive benefits, and become a key player in the $SFT movement. The time to shine is now—don't miss out!</p>
       `
     },
     {
@@ -120,6 +125,7 @@ function getRandomSecondSection() {
         <p>Unlock a world of possibilities with $SFT. Enjoy exclusive tools and a secure, community-driven platform that’s setting the standard in the crypto space.</p>
         <a href="https://sherkfun.io/token/6wY93bkRSk5KagCGTHrjLPCpbMWEPQGU9wrpsZ8tyftL" class="button-highlightgame">Buy $SFT Now</a>
         <a href="https://t.me/SherkFunCommunity" class="button">Join Telegram</a>
+        <p>Be part of the most exciting crypto revolution and unlock incredible rewards. $SFT is here, and your journey starts now!</p>
       `
     }
   ];
@@ -134,19 +140,19 @@ function getRandomGiveaway() {
     {
       title: "Giveaway Announcement",
       content: `
-        <p>After bonding $SFT to Raydium, 0.5% (5M) of the supply will be given to a new holder! Purchases over $50 qualify, so hold your tokens for at least 48 hours to participate.</p>
+        <p>The exclusive $SFT Giveaway will kick off once the token is bonded to Raydium! 0.5% (5M) of the supply is going to find a new holder! To qualify, every purchase over $50 (after bonding to Raydium) will count. Winners must hold their tokens for a minimum of 48 hours after the giveaway.</p>
       `
     },
     {
       title: "Giveaway Announcement",
       content: `
-        <p>Get ready for an exciting giveaway: after bonding to Raydium, 0.5% of $SFT’s total supply is up for grabs! Every purchase over $50 counts – hold your tokens for 48 hours to qualify.</p>
+        <p>After we bond $SFT to Raydium, I will sponsor an exclusive Giveaway! 0.5% (5M) of the supply will be given to a new holder! To qualify, every purchase over $50 (after bonding to Raydium) will count. Make sure to hold your tokens for at least 48 hours to be eligible for the giveaway.</p>
       `
     },
     {
       title: "Giveaway Announcement",
       content: `
-        <p>The exclusive $SFT Giveaway is coming once bonded to Raydium! Purchases above $50 will be eligible, and tokens must be held for a minimum of 48 hours to win.</p>
+        <p>Get ready for an exciting Giveaway once $SFT is bonded to Raydium! 0.5% (5M) of the total supply is up for grabs! All purchases over $50, after bonding to Raydium, will be eligible to participate. Remember to hold your tokens for 48 hours after the giveaway to qualify as a winner.</p>
       `
     }
   ];
