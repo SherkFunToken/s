@@ -37,6 +37,8 @@
         z-index: 2000;
         overflow: hidden;
         opacity: 1;
+        /* Permite que cliques passem para o conteúdo abaixo */
+        pointer-events: auto;
       }
       #hacker-text {
         width: 80%;
@@ -276,6 +278,8 @@ Your journey begins now.
         const splashModal = document.getElementById("splashModal");
         // Configura a transição de opacidade com a duração calculada
         splashModal.style.transition = `opacity ${totalFadeDuration}ms linear`;
+        // Permite a interação com o conteúdo principal enquanto o splash modal fade-out ocorre
+        splashModal.style.pointerEvents = "none";
         // Inicia o fade-out imediatamente
         splashModal.style.opacity = "0";
         // Após o tempo total, remove o splash modal (oculta-o completamente)
