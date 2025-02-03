@@ -726,3 +726,103 @@ main {
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
+
+
+/* Team Section Geral */
+/* Team Section Geral */
+/* Team Section Geral */
+/* Team Section Geral */
+/* Importa o CSS do Swiper */
+@import url('https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
+
+/* Team Section Geral */
+.team-section {
+  text-align: center;
+  padding: 40px;
+  margin: 30px auto;
+  background: rgba(0, 0, 0, 0.8);
+  border: 4px solid #39ff14;
+  border-radius: 15px;
+  max-width: 900px;
+  box-shadow: 0 0 30px #39ff14;
+  animation: changeBorderColor 5s linear infinite, rotateContent 10s linear infinite;
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: visible;
+}
+
+.team-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #39ff14;
+  text-shadow: 0 0 8px #39ff14, 0 0 15px #ff1493;
+}
+
+/* Swiper Styles */
+.swiper {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.swiper-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.swiper-slide {
+  scale: 1.25;
+  transition: scale 250ms ease-in-out;
+}
+
+.swiper-slide.swiper-slide-active {
+  scale: 2;
+  z-index: 10;
+}
+
+.swiper-slide.swiper-slide-prev,
+.swiper-slide.swiper-slide-next {
+  scale: 1.7;
+  z-index: 5;
+  transition-duration: 150ms;
+}
+
+.swiper-slide img {
+  display: block;
+  border-radius: 0.5rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+}
+
+.swiper-button {
+  --position: 17%;
+  background-color: #F04E23;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 0.5rem;
+}
+
+.swiper-button.swiper-button-prev {
+  left: var(--position);
+}
+
+.swiper-button.swiper-button-next {
+  right: var(--position);
+}
+
+.swiper-button:hover {
+  background-color: #4A261F;
+}
+
+.swiper-button::after {
+  font-size: 1.5rem;
+  color: white;
+}
+
+/* Responsividade para o Swiper, se necessário */
+@media (max-width: 768px) {
+  .swiper-slide {
+    scale: 1.1;
+  }
+}
