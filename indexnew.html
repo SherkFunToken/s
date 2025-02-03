@@ -244,18 +244,18 @@
 Initializing Sherk Fun Token System...
 Connecting to Sherkfun.io... [OK]
 Verifying Blockchain Integrity... [OK]
-Accessing CoinGecko API... [OK]
 Encrypting Smart Contracts... [OK]
 Securing Virtual Liquidity Pool... [OK]
-Generating Sherk Fun Enigma... [FAILED]
-Retrying.......
-Sherk Fun Token Enigma Established... [OK]
 Now you can deploy at Sherkfun.io... [OK]
 Welcome to the new crypto frontier.
 Your journey begins now.
       `;
       
       let index = 0;
+      // Tempo de digitação por caractere (em ms)
+      const typeDelay = 40;
+      // Tempo adicional para o fade-out após a digitação (em ms)
+      const fadeDelay = 800;
       
       // Função de digitação do texto (typewriter)
       function typeText() {
@@ -263,16 +263,16 @@ Your journey begins now.
         if (index < text.length) {
           hackerTextElem.innerHTML += text[index];
           index++;
-          setTimeout(typeText, 50);
+          setTimeout(typeText, typeDelay);
         }
       }
       
-      // Assim que a página carregar, inicia a digitação e configura o fade-out para terminar 1 segundo após o fim da animação.
+      // Ao carregar a página, inicia a digitação e configura o fade-out para terminar fadeDelay após o fim da animação.
       window.addEventListener("load", () => {
         // Inicia a digitação do texto
         typeText();
-        // Calcula a duração total da animação de digitação (tempo de cada caractere) + 1 segundo
-        const totalFadeDuration = text.length * 50 + 1000;
+        // Calcula a duração total da animação de digitação + fadeDelay
+        const totalFadeDuration = text.length * typeDelay + fadeDelay;
         const splashModal = document.getElementById("splashModal");
         // Configura a transição de opacidade com a duração calculada
         splashModal.style.transition = `opacity ${totalFadeDuration}ms linear`;
