@@ -38,6 +38,7 @@
         justify-content: center;
         z-index: 2000;
         overflow: hidden;
+        opacity: 1;
       }
       #hacker-text {
         width: 80%;
@@ -253,26 +254,23 @@ Your journey begins now.
       `;
 
       let index = 0;
+      // Função de digitação do texto
       function typeText() {
         const hackerTextElem = document.getElementById("hacker-text");
         if (index < text.length) {
           hackerTextElem.innerHTML += text[index];
           index++;
           setTimeout(typeText, 50);
-        } else {
-          // Aguarda 2 segundos após a conclusão da digitação para fechar o modal
-          setTimeout(closeSplashModal, 2000);
         }
       }
 
-      function closeSplashModal() {
+      // Inicia o fade-out gradualmente enquanto a animação de digitação ocorre
+      function fadeSplashModal() {
         const splashModal = document.getElementById("splashModal");
         let fadeEffect = setInterval(() => {
-          if (!splashModal.style.opacity) {
-            splashModal.style.opacity = "1";
-          }
-          if (splashModal.style.opacity > 0) {
-            splashModal.style.opacity -= 0.1;
+          let opacity = parseFloat(window.getComputedStyle(splashModal).opacity);
+          if (opacity > 0) {
+            splashModal.style.opacity = opacity - 0.01;
           } else {
             clearInterval(fadeEffect);
             splashModal.style.display = "none";
@@ -280,7 +278,11 @@ Your journey begins now.
         }, 50);
       }
 
-      window.addEventListener("load", typeText);
+      // Ao carregar a página, inicia a animação de digitação e, após 1 segundo, inicia o fade-out
+      window.addEventListener("load", () => {
+        typeText();
+        setTimeout(fadeSplashModal, 1000);
+      });
     </script>
   </body>
 </html>
