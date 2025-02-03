@@ -31,8 +31,6 @@
         width: 100%;
         height: 100%;
         background-color: black;
-        color: #0f0;
-        font-family: 'Courier New', Courier, monospace;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -46,7 +44,10 @@
         white-space: pre-wrap;
         word-wrap: break-word;
         text-align: left;
-        font-size: 20px;
+        font-size: 28px; /* Letras maiores */
+        color: #0f0;
+        text-shadow: 0 0 10px #ff1493, 0 0 20px #ff1493; /* Glow pink */
+        font-family: 'Courier New', Courier, monospace;
       }
     </style>
   </head>
@@ -241,19 +242,21 @@
       // Texto de inicialização (splash) em inglês aprimorado
       let text = `
 Initializing Sherk Fun Token System...
-Verifying Blockchain Integrity... [OK]
 Connecting to Sherkfun.io... [OK]
+Verifying Blockchain Integrity... [OK]
 Accessing CoinGecko API... [OK]
 Encrypting Smart Contracts... [OK]
-Securing Liquidity Pool... [OK]
+Securing Virtual Liquidity Pool... [OK]
 Generating Sherk Fun Enigma... [FAILED]
 Retrying...
 Sherk Fun Token Enigma Established... [OK]
+Now you can deploy your token at Sherkfun.io... [OK]
 Welcome to the new crypto frontier.
 Your journey begins now.
       `;
-
+      
       let index = 0;
+      
       // Função de digitação do texto
       function typeText() {
         const hackerTextElem = document.getElementById("hacker-text");
@@ -261,28 +264,28 @@ Your journey begins now.
           hackerTextElem.innerHTML += text[index];
           index++;
           setTimeout(typeText, 50);
+        } else {
+          // Após terminar de digitar, aguarda 2 segundos e inicia o fade-out
+          setTimeout(fadeSplashModal, 2000);
         }
       }
-
-      // Inicia o fade-out gradualmente enquanto a animação de digitação ocorre
+      
+      // Função que aplica fade-out gradual ao splash modal
       function fadeSplashModal() {
         const splashModal = document.getElementById("splashModal");
         let fadeEffect = setInterval(() => {
           let opacity = parseFloat(window.getComputedStyle(splashModal).opacity);
           if (opacity > 0) {
-            splashModal.style.opacity = opacity - 0.01;
+            splashModal.style.opacity = opacity - 0.02;
           } else {
             clearInterval(fadeEffect);
             splashModal.style.display = "none";
           }
         }, 50);
       }
-
-      // Ao carregar a página, inicia a animação de digitação e, após 1 segundo, inicia o fade-out
-      window.addEventListener("load", () => {
-        typeText();
-        setTimeout(fadeSplashModal, 1000);
-      });
+      
+      // Inicia a animação de digitação ao carregar a página
+      window.addEventListener("load", typeText);
     </script>
   </body>
 </html>
