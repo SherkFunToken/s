@@ -37,8 +37,7 @@
         z-index: 2000;
         overflow: hidden;
         opacity: 1;
-        /* Inicialmente, o splash modal bloqueia cliques; 
-           estes serão liberados somente quando o fade-out iniciar */
+        /* Enquanto a digitação ocorre, o modal bloqueia interações */
         pointer-events: auto;
       }
       #hacker-text {
@@ -258,8 +257,8 @@ Your journey begins now.
       let index = 0;
       // Tempo de digitação por caractere (em ms)
       const typeDelay = 40;
-      // Tempo adicional para o fade-out após a conclusão da digitação (em ms)
-      const fadeDelay = 800;
+      // Aguardar 1000ms após terminar a digitação antes de iniciar o fade-out
+      const fadeDelay = 1000;
       
       // Função de digitação (typewriter)
       function typeText() {
@@ -276,7 +275,7 @@ Your journey begins now.
       
       function startFadeOut() {
         const splashModal = document.getElementById("splashModal");
-        // Permite que os cliques passem para o conteúdo principal enquanto o fade-out ocorre
+        // Libera interações com o conteúdo principal
         splashModal.style.pointerEvents = "none";
         // Define a duração do fade-out (por exemplo, 1000ms = 1 segundo)
         const fadeDuration = 1000;
@@ -287,7 +286,7 @@ Your journey begins now.
         }, fadeDuration);
       }
       
-      // Inicia a animação de digitação ao carregar a página
+      // Inicia a digitação do texto ao carregar a página
       window.addEventListener("load", () => {
         typeText();
       });
