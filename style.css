@@ -599,8 +599,8 @@ main {
   text-shadow: 0 0 8px #39ff14, 0 0 15px #ff1493;
 }
 
-/* Container Horizontal dos Cards do Roadmap */
-.roadmap-content {
+/* Contêiner Horizontal para os MiniCards */
+.mini-card-grid {
   display: flex;
   flex-direction: row;
   gap: 20px;
@@ -610,53 +610,101 @@ main {
   -webkit-overflow-scrolling: touch;
 }
 
-/* Roadmap Item – Cada Card */
-.roadmap-item {
-  flex: 0 0 auto;
-  min-width: 300px;
-  background: rgba(0, 0, 0, 0.9);
-  padding: 20px;
-  border: 4px solid #39ff14;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  scroll-snap-align: start;
-  position: relative;
-}
-
-/* Efeito Hover: o card se desloca e aumenta ligeiramente */
-.roadmap-item:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-  z-index: 10;
-}
-
-/* Cabeçalho de Cada Card */
-.roadmap-item h3 {
-  font-size: 1.8rem;
-  color: #ff1493;
-  margin-bottom: 10px;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
-}
-
-/* Parágrafos do Card */
-.roadmap-item p {
-  font-size: 1.1rem;
-  color: #e0e0e0;
-  line-height: 1.6;
-  margin-bottom: 10px;
-}
-
 /* Estilização da Scrollbar para navegadores compatíveis */
-.roadmap-content::-webkit-scrollbar {
+.mini-card-grid::-webkit-scrollbar {
   height: 10px;
 }
 
-.roadmap-content::-webkit-scrollbar-thumb {
+.mini-card-grid::-webkit-scrollbar-thumb {
   background: #434343;
   border-radius: 10px;
 }
 
-.roadmap-content::-webkit-scrollbar-track {
+.mini-card-grid::-webkit-scrollbar-track {
   background: #262626;
+}
+
+/* Estilo Base dos MiniCards (adaptado dos roadmap-items e dos minicards originais) */
+.mini-card {
+  flex: 0 0 auto;
+  min-width: 300px;
+  min-height: 350px;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: linear-gradient(85deg, #434343, #262626);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin: 0;
+  box-shadow: -2rem 0 3rem -2rem black;
+  scroll-snap-align: start;
+  position: relative;
+}
+
+/* Remover decoracão de links internos, se houver */
+.mini-card a {
+  text-decoration: none;
+}
+
+.mini-card h3 a {
+  color: white !important;
+}
+
+.mini-card h3 .aal_anchor {
+  display: none;
+}
+
+/* Efeito Hover e Focus: Elevação, Rotação e Empurrar os Cards Subsequentes */
+.mini-card:hover,
+.mini-card:focus-within {
+  transform: translate(0, -1rem) rotate(3deg);
+}
+.mini-card:hover ~ .mini-card {
+  transform: translateX(130px);
+}
+
+/* Ajustes para o Primeiro Card (opcional) */
+.mini-card:first-child:hover,
+.mini-card:first-child:focus-within {
+  transform: translate(-0.5rem, -1rem) rotate(3deg);
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 1200px) {
+  .mini-card {
+    min-width: 220px;
+  }
+  .mini-card:not(:first-child) {
+    margin-left: -30px;
+  }
+  .mini-card:hover,
+  .mini-card:focus-within {
+    transform: translate(0, -1rem);
+  }
+  .mini-card:hover ~ .mini-card {
+    transform: translateX(30px);
+  }
+}
+
+@media (max-width: 800px) {
+  .mini-card {
+    min-width: 190px;
+  }
+  .mini-card:not(:first-child) {
+    margin-left: -10px;
+  }
+  .mini-card:hover,
+  .mini-card:focus-within {
+    transform: translate(0, -1rem);
+  }
+  .mini-card:hover ~ .mini-card {
+    transform: translateX(10px);
+  }
+}
+
+/* Estilo para o Título do MiniCard */
+.mini-card-title {
+  font-size: 1.3rem;
+  margin: 0 0 1rem 0;
 }
