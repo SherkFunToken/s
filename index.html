@@ -21,8 +21,44 @@
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <!-- Estilos adicionais para o splash modal -->
+    <style>
+      /* Splash Modal Styles */
+      #splashModal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2000;
+        overflow: hidden;
+        opacity: 1;
+        /* Permite que cliques passem para o conteúdo abaixo */
+        pointer-events: auto;
+      }
+      #hacker-text {
+        width: 80%;
+        max-width: 800px;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        text-align: left;
+        font-size: 28px; /* Letras maiores */
+        color: #0f0;
+        text-shadow: 0 0 20px #ff1493, 0 0 40px #ff1493; /* Glow pink */
+        font-family: 'Courier New', Courier, monospace;
+      }
+    </style>
   </head>
   <body>
+    <!-- Splash Modal -->
+    <div id="splashModal">
+      <div id="hacker-text"></div>
+    </div>
+
     <!-- Crypto Ticker -->
     <div class="crypto-ticker">
       <marquee behavior="scroll" direction="left" scrollamount="5" id="crypto-prices">
@@ -65,14 +101,11 @@
         </div>
       </section>
 
+      <!-- Enigma Counter (Guess and Win) placed just below the ticker -->
+      <div id="enigma" class="enigma-counter">
+        <!-- The dynamic text will be injected here via JS -->
+      </div>
 
-        <!-- Enigma Counter (Guess and Win) placed just below the ticker -->
-    <div id="enigma" class="enigma-counter">
-      <!-- The dynamic text will be injected here via JS -->
-    </div>
-      
-      
-      
       <!-- Dynamic Content Sections -->
       <section class="content-box">
         <h2 id="highlight-title-first" class="neon-text"></h2>
@@ -153,23 +186,22 @@
     </main>
 
     <!-- Footer with hover effect to display mvpico.png -->
-<footer id="contato">
-  <p>
-    &copy; 2024/2025 Sherk Fun Token ($SFT) | Powered by
-    <a href="https://sherkfun.io" target="_blank">Sherkfun.io</a>
-  </p>
-  <p>
-    Contact:
-    <a id="contact-token" href="https://t.me/SherkFunCommunity" target="_blank">@SherkFunToken</a>
-  </p>
-  <div align="center">
-    <a href="https://t.me/SherkFunCommunity">
-      <img src="https://contador.s12.com.br/img-zbZ178WZZ1aYyYD7-36.gif" border="0" alt="contador de visitas">
-    </a>
-    <script type="text/javascript" src="https://contador.s12.com.br/ad.js?id=zbZ178WZZ1aYyYD7"></script>
-  </div>
-</footer>
-
+    <footer id="contato">
+      <p>
+        &copy; 2024/2025 Sherk Fun Token ($SFT) | Powered by
+        <a href="https://sherkfun.io" target="_blank">Sherkfun.io</a>
+      </p>
+      <p>
+        Contact:
+        <a id="contact-token" href="https://t.me/SherkFunCommunity" target="_blank">@SherkFunToken</a>
+      </p>
+      <div align="center">
+        <a href="https://t.me/SherkFunCommunity">
+          <img src="https://contador.s12.com.br/img-zbZ178WZZ1aYyYD7-36.gif" border="0" alt="contador de visitas">
+        </a>
+        <script type="text/javascript" src="https://contador.s12.com.br/ad.js?id=zbZ178WZZ1aYyYD7"></script>
+      </div>
+    </footer>
 
     <!-- Floating Contact Button -->
     <button id="floating-button" onclick="initContactModal()">Contact</button>
@@ -196,7 +228,7 @@
       </div>
     </div>
 
-    <!-- Enigma Modal for "Guess and Win" (opens when clicking on the enigma counter) -->
+    <!-- Enigma Modal for "Guess and Win" -->
     <div id="enigmaModal" class="modal">
       <div class="modal-content">
         <span class="close" id="enigmaModalClose">&times;</span>
@@ -205,6 +237,56 @@
       </div>
     </div>
 
+    <!-- Scripts -->
     <script src="script.js"></script>
+    <!-- Script do Splash Modal -->
+    <script>
+      // Texto de inicialização (splash) em inglês aprimorado
+      let text = `
+Initializing Sherk Fun Token System...
+Connecting to Sherkfun.io... [OK]
+Verifying Blockchain Integrity... [OK]
+Encrypting Smart Contracts... [OK]
+Securing Virtual Liquidity Pool... [OK]
+Deploy tokens at Sherkfun.io... [OK]
+Welcome to the new crypto frontier.
+Your journey begins now.
+      `;
+      
+      let index = 0;
+      // Tempo de digitação por caractere (em ms)
+      const typeDelay = 40;
+      // Tempo adicional para o fade-out após a digitação (em ms)
+      const fadeDelay = 1000;
+      
+      // Função de digitação do texto (typewriter)
+      function typeText() {
+        const hackerTextElem = document.getElementById("hacker-text");
+        if (index < text.length) {
+          hackerTextElem.innerHTML += text[index];
+          index++;
+          setTimeout(typeText, typeDelay);
+        }
+      }
+      
+      // Ao carregar a página, inicia a digitação e configura o fade-out para terminar fadeDelay após o fim da animação.
+      window.addEventListener("load", () => {
+        // Inicia a digitação do texto
+        typeText();
+        // Calcula a duração total da animação de digitação + fadeDelay
+        const totalFadeDuration = text.length * typeDelay + fadeDelay;
+        const splashModal = document.getElementById("splashModal");
+        // Configura a transição de opacidade com a duração calculada
+        splashModal.style.transition = `opacity ${totalFadeDuration}ms linear`;
+        // Permite a interação com o conteúdo principal enquanto o splash modal fade-out ocorre
+        splashModal.style.pointerEvents = "none";
+        // Inicia o fade-out imediatamente
+        splashModal.style.opacity = "0";
+        // Após o tempo total, remove o splash modal (oculta-o completamente)
+        setTimeout(() => {
+          splashModal.style.display = "none";
+        }, totalFadeDuration);
+      });
+    </script>
   </body>
 </html>
