@@ -257,7 +257,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     enigmaElement.addEventListener("click", () => {
       enigmaModal.style.display = "block";
-      updateEnigmaModalText(); 
+      updateEnigmaModalText();
       enigmaModal.dataset.interval = setInterval(updateEnigmaModalText, 3000);
     });
 
@@ -414,7 +414,7 @@ document.addEventListener("DOMContentLoaded", () => {
   calculateHeight();
   window.addEventListener('resize', calculateHeight);
 
-  // Initialization
+  // Initialization of all modules
   setInterval(rotateBanner, 7000);
   fetchCryptoPrices();
   setInterval(fetchCryptoPrices, 60000);
