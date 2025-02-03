@@ -21,7 +21,7 @@
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <!-- Estilos adicionais para o splash modal -->
+    <!-- Estilos adicionais para o splash modal e para o fade-in do conteúdo principal -->
     <style>
       /* Splash Modal Styles */
       #splashModal {
@@ -37,8 +37,7 @@
         z-index: 2000;
         overflow: hidden;
         opacity: 1;
-        /* Enquanto a digitação ocorre, o modal bloqueia interações */
-        pointer-events: auto;
+        pointer-events: auto; /* Bloqueia interações enquanto o modal estiver ativo */
       }
       #hacker-text {
         width: 80%;
@@ -51,6 +50,11 @@
         /* Glow rosa mais forte */
         text-shadow: 0 0 20px #ff1493, 0 0 40px #ff1493;
         font-family: 'Courier New', Courier, monospace;
+      }
+      /* Conteúdo principal inicia invisível e fará fade-in */
+      main {
+        opacity: 0;
+        transition: opacity 1000ms ease;
       }
     </style>
   </head>
@@ -257,7 +261,7 @@ Your journey begins now.
       let index = 0;
       // Tempo de digitação por caractere (em ms)
       const typeDelay = 40;
-      // Aguardar 1000ms após terminar a digitação antes de iniciar o fade-out
+      // Após terminar a digitação, aguarda 1 segundo para iniciar o fade-out do splash modal
       const fadeDelay = 1000;
       
       // Função de digitação (typewriter)
@@ -268,16 +272,16 @@ Your journey begins now.
           index++;
           setTimeout(typeText, typeDelay);
         } else {
-          // Quando a digitação terminar, aguarda fadeDelay e inicia o fade-out
+          // Quando a digitação terminar, aguarda fadeDelay e inicia o fade-out do splash modal
           setTimeout(startFadeOut, fadeDelay);
         }
       }
       
       function startFadeOut() {
         const splashModal = document.getElementById("splashModal");
-        // Libera interações com o conteúdo principal
+        // Libera as interações com o conteúdo principal
         splashModal.style.pointerEvents = "none";
-        // Define a duração do fade-out (por exemplo, 1000ms = 1 segundo)
+        // Define a duração do fade-out (1 segundo)
         const fadeDuration = 1000;
         splashModal.style.transition = `opacity ${fadeDuration}ms linear`;
         splashModal.style.opacity = "0";
@@ -289,6 +293,10 @@ Your journey begins now.
       // Inicia a digitação do texto ao carregar a página
       window.addEventListener("load", () => {
         typeText();
+        // Após 1 segundo do início da animação, inicia o fade-in do conteúdo principal
+        setTimeout(() => {
+          document.querySelector("main").style.opacity = "1";
+        }, 1000);
       });
     </script>
   </body>
