@@ -348,15 +348,28 @@ function initAdminModal() {
   });
 }
 
-  /* FAQ Accordion Logic */
+<!-- FAQ Accordion Script -->
+<script>
+  /* Lógica do Accordion para o FAQ - Apenas um aberto por vez */
   const faqItems = document.querySelectorAll('.faq-item');
+  
   faqItems.forEach(item => {
     const question = item.querySelector('.faq-question');
     question.addEventListener('click', () => {
-      // Toggle the "active" class to show or hide the answer
-      item.classList.toggle('active');
+      // Verifica se o item clicado já está ativo
+      const isActive = item.classList.contains('active');
+      
+      // Fecha todas as respostas
+      faqItems.forEach(i => i.classList.remove('active'));
+      
+      // Se o item clicado não estava ativo, ativa-o (abre sua resposta)
+      if (!isActive) {
+        item.classList.add('active');
+      }
     });
   });
+</script>
+
 
 /* Initialization */
 window.onload = function () {
