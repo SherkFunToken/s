@@ -1,6 +1,6 @@
 // Espera o DOM estar carregado antes de iniciar
 document.addEventListener("DOMContentLoaded", () => {
-  // Banner Rotation Script
+  /* Banner Rotation Script */
   let bannerIndex = 0;
   const banners = [
     { src: "https://token4fun.github.io/babysherk/banner1.gif", link: "https://sherkfun.io/" },
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     bannerLink.href = banners[bannerIndex].link;
   }
 
-  // Crypto Prices Ticker
+  /* Crypto Prices Ticker */
   async function fetchCryptoPrices() {
     try {
       const response = await fetch(
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Dynamic Content
+  /* Dynamic Content */
 
   /* First Section */
   function getRandomFirstSection() {
@@ -142,19 +142,22 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         title: "Giveaway Announcement",
         content: `
-          <p>The exclusive $SFT Giveaway kicks off once the token bonds to Raydium! 0.5% (5M) of the supply will find a new holder. <br>Every purchase over $50 counts, and winners must hold tokens for at least 48 hours.</p>
+          <p>The exclusive $SFT Giveaway kicks off once the token bonds to Raydium! 0.5% (5M) of the supply will find a new holder.<br>
+          Every purchase over $50 counts, and winners must hold tokens for at least 48 hours.</p>
         `
       },
       {
         title: "Giveaway Announcement",
         content: `
-          <p>After bonding $SFT to Raydium, an exclusive Giveaway will be sponsored! 0.5% (5M) of the supply goes to a new holder. <br>Purchases over $50 count—hold your tokens for 48 hours to be eligible.</p>
+          <p>After bonding $SFT to Raydium, an exclusive Giveaway will be sponsored! 0.5% (5M) of the supply goes to a new holder.<br>
+          Purchases over $50 count—hold your tokens for 48 hours to be eligible.</p>
         `
       },
       {
         title: "Giveaway Announcement",
         content: `
-          <p>Get ready for an exciting Giveaway once $SFT bonds to Raydium! 0.5% (5M) of the supply is up for grabs. <br>All purchases over $50 qualify; remember to hold your tokens for 48 hours to win.</p>
+          <p>Get ready for an exciting Giveaway once $SFT bonds to Raydium! 0.5% (5M) of the supply is up for grabs.<br>
+          All purchases over $50 qualify; remember to hold your tokens for 48 hours to win.</p>
         `
       }
     ];
@@ -163,7 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("giveaway-content").innerHTML = randomVersion.content;
   }
 
-  // Enigma Counter (random alphanumeric string with prefix "Guess and Win:")
+  /* Enigma Counter (random alphanumeric string with prefix "Guess and Win:") */
   function updateEnigmaCounter() {
     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     let result = "";
@@ -178,7 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(updateEnigmaCounter, 300);
   }
 
-  // Initialize movement for PNG elements with simple collision detection
+  /* Initialize movement for PNG elements with simple collision detection */
   function initElementMovement() {
     const elements = document.querySelectorAll(".animated-elements .element");
     elements.forEach(el => {
@@ -213,7 +216,7 @@ document.addEventListener("DOMContentLoaded", () => {
     animate();
   }
 
-  // Contact Modal Handling with Countdown
+  /* Contact Modal Handling with Countdown */
   function initContactModal() {
     const contactButton = document.getElementById("floating-button");
     const contactModal = document.getElementById("contactModal");
@@ -246,7 +249,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Enigma Modal Handling for Guess and Win
+  /* Enigma Modal Handling for Guess and Win */
   function initEnigmaModal() {
     const enigmaElement = document.getElementById("enigma");
     const enigmaModal = document.getElementById("enigmaModal");
@@ -271,7 +274,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Update Enigma Modal Text with dynamic phrases about $SFT and mystery
+  /* Update Enigma Modal Text with dynamic phrases about $SFT and mystery */
   function updateEnigmaModalText() {
     const phrases = [
       "Every moment, Sherk Fun Token unveils a new secret...",
@@ -314,7 +317,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("enigmaModalText").textContent = randomPhrase;
   }
 
-  // Admin Modal Handling
+  /* Admin Modal Handling */
   function initAdminModal() {
     const adminBtn = document.getElementById("adminBtn");
     const modal = document.getElementById("adminModal");
@@ -348,7 +351,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // FAQ Accordion Script - Apenas um aberto por vez
+  /* FAQ Accordion Script - Apenas um aberto por vez */
   const faqItems = document.querySelectorAll('.faq-item');
   faqItems.forEach(item => {
     const question = item.querySelector('.faq-question');
@@ -384,35 +387,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-
-// Inicialização do Swiper para a seção Team
-const swiper = new Swiper(".swiper", {
-  slidesPerView: 5,
-  spaceBetween: 0,
-  centeredSlides: true,
-  loop: true,
-  simulateTouch: 'ontouchstart' in window || navigator.maxTouchPoints > 0,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
-
-// Ajusta a altura dos slides com base na largura para manter a proporção 16:9
-const calculateHeight = () => {
-  const swiperSlideElements = Array.from(document.querySelectorAll('.swiper .swiper-slide'));
-  if (!swiperSlideElements.length) return;
-  const width = swiperSlideElements[0].getBoundingClientRect().width;
-  const height = Math.round(width / (16 / 9));
-  swiperSlideElements.forEach(element => {
-    element.style.height = `${height}px`;
+  /* Swiper Initialization for the Team Section */
+  const swiper = new Swiper(".swiper", {
+    slidesPerView: 5,
+    spaceBetween: 0,
+    centeredSlides: true,
+    loop: true,
+    simulateTouch: 'ontouchstart' in window || navigator.maxTouchPoints > 0,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
   });
-};
 
-document.addEventListener("DOMContentLoaded", calculateHeight);
-window.addEventListener('resize', calculateHeight);
+  // Adjusts the height of the slides to maintain a 16:9 ratio
+  const calculateHeight = () => {
+    const swiperSlideElements = Array.from(document.querySelectorAll('.swiper .swiper-slide'));
+    if (!swiperSlideElements.length) return;
+    const width = swiperSlideElements[0].getBoundingClientRect().width;
+    const height = Math.round(width / (16 / 9));
+    swiperSlideElements.forEach(element => {
+      element.style.height = `${height}px`;
+    });
+  };
 
-  
+  calculateHeight();
+  window.addEventListener('resize', calculateHeight);
+
   // Initialization
   setInterval(rotateBanner, 7000);
   fetchCryptoPrices();
