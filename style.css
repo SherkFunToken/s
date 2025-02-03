@@ -576,6 +576,7 @@ main {
 }
 
 /* Roadmap Section */
+/* Roadmap Section Geral */
 .roadmap {
   text-align: center;
   padding: 40px;
@@ -585,12 +586,11 @@ main {
   border-radius: 15px;
   max-width: 900px;
   box-shadow: 0 0 30px #39ff14;
-  /* Mantendo as animações já utilizadas no site */
   animation: changeBorderColor 5s linear infinite, rotateContent 10s linear infinite;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Roadmap Heading */
+/* Título do Roadmap */
 .roadmap h2 {
   font-size: 2.5rem;
   margin-bottom: 30px;
@@ -598,13 +598,14 @@ main {
   text-shadow: 0 0 8px #39ff14, 0 0 15px #ff1493;
 }
 
-/* Roadmap Content Container */
+/* Container dos Cards do Roadmap */
 .roadmap-content {
   position: relative;
-  /* Itens empilhados verticalmente sem grid para sobreposição */
+  display: flex;
+  flex-direction: column;
 }
 
-/* Roadmap Items - cada item se sobrepõe ao anterior */
+/* Roadmap Item – Cada Card */
 .roadmap-item {
   background: rgba(0, 0, 0, 0.9);
   padding: 20px;
@@ -613,27 +614,28 @@ main {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
-  margin-top: -30px; /* Overlap: os itens se empilham com margem negativa */
+  margin-top: -30px;  /* Sobreposição: os cards se empilham */
+  z-index: 1;
 }
 
-/* Garante que o primeiro item não tenha margem negativa */
+/* O primeiro card não terá margem negativa */
 .roadmap-item:first-child {
   margin-top: 0;
 }
 
-/* Ao passar o mouse, o item se desloca e ganha destaque */
+/* Efeito Hover: o card se desloca para "afastar" e empurra os demais */
 .roadmap-item:hover {
   transform: translate(20px, -10px) scale(1.05);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
   z-index: 10;
 }
 
-/* Os itens que seguem o item hover se deslocam para a direita */
+/* Os cards subsequentes se deslocam um pouco para o lado quando um card é hover */
 .roadmap-item:hover ~ .roadmap-item {
   transform: translateX(20px);
 }
 
-/* Roadmap Item Headings */
+/* Cabeçalho de Cada Card */
 .roadmap-item h3 {
   font-size: 1.8rem;
   color: #ff1493;
@@ -641,11 +643,10 @@ main {
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Roadmap Item Paragraphs */
+/* Parágrafos do Card */
 .roadmap-item p {
   font-size: 1.1rem;
   color: #e0e0e0;
   line-height: 1.6;
   margin-bottom: 10px;
 }
-
