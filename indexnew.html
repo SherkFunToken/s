@@ -290,10 +290,11 @@ Your journey begins now.
         }, fadeDuration);
       }
       
-      // Inicia a digitação do texto ao carregar a página
+      // Quando a página carregar:
       window.addEventListener("load", () => {
+        // Inicia a digitação imediatamente
         typeText();
-        // Após 1 segundo do início da animação, inicia o fade-in do conteúdo principal
+        // Inicia o fade-in do conteúdo principal exatamente 1 segundo após o início da animação
         setTimeout(() => {
           document.querySelector("main").style.opacity = "1";
         }, 1000);
