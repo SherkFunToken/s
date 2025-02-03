@@ -248,44 +248,41 @@ Accessing CoinGecko API... [OK]
 Encrypting Smart Contracts... [OK]
 Securing Virtual Liquidity Pool... [OK]
 Generating Sherk Fun Enigma... [FAILED]
-Retrying...
+Retrying.......
 Sherk Fun Token Enigma Established... [OK]
-Now you can deploy your token at Sherkfun.io... [OK]
+Now you can deploy at Sherkfun.io... [OK]
 Welcome to the new crypto frontier.
 Your journey begins now.
       `;
       
       let index = 0;
       
-      // Função de digitação do texto
+      // Função de digitação do texto (typewriter)
       function typeText() {
         const hackerTextElem = document.getElementById("hacker-text");
         if (index < text.length) {
           hackerTextElem.innerHTML += text[index];
           index++;
           setTimeout(typeText, 50);
-        } else {
-          // Após terminar de digitar, aguarda 2 segundos e inicia o fade-out
-          setTimeout(fadeSplashModal, 2000);
         }
       }
       
-      // Função que aplica fade-out gradual ao splash modal
-      function fadeSplashModal() {
+      // Assim que a página carregar, inicia a digitação e configura o fade-out para terminar 1 segundo após o fim da animação.
+      window.addEventListener("load", () => {
+        // Inicia a digitação do texto
+        typeText();
+        // Calcula a duração total da animação de digitação (tempo de cada caractere) + 1 segundo
+        const totalFadeDuration = text.length * 50 + 1000;
         const splashModal = document.getElementById("splashModal");
-        let fadeEffect = setInterval(() => {
-          let opacity = parseFloat(window.getComputedStyle(splashModal).opacity);
-          if (opacity > 0) {
-            splashModal.style.opacity = opacity - 0.02;
-          } else {
-            clearInterval(fadeEffect);
-            splashModal.style.display = "none";
-          }
-        }, 50);
-      }
-      
-      // Inicia a animação de digitação ao carregar a página
-      window.addEventListener("load", typeText);
+        // Configura a transição de opacidade com a duração calculada
+        splashModal.style.transition = `opacity ${totalFadeDuration}ms linear`;
+        // Inicia o fade-out imediatamente
+        splashModal.style.opacity = "0";
+        // Após o tempo total, remove o splash modal (oculta-o completamente)
+        setTimeout(() => {
+          splashModal.style.display = "none";
+        }, totalFadeDuration);
+      });
     </script>
   </body>
 </html>
