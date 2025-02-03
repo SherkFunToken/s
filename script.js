@@ -349,7 +349,6 @@ function initAdminModal() {
 }
 
 <!-- FAQ Accordion Script -->
-<script>
   /* Lógica do Accordion para o FAQ - Apenas um aberto por vez */
   const faqItems = document.querySelectorAll('.faq-item');
   
@@ -368,7 +367,6 @@ function initAdminModal() {
       }
     });
   });
-</script>
 
 
 /* Initialization */
