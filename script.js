@@ -172,15 +172,12 @@ function startEnigmaCounter() {
 /* Initialize movement for PNG elements with simple collision detection */
 function initElementMovement() {
   const elements = document.querySelectorAll(".animated-elements .element");
-
-  // Atribui posição e velocidade aleatória para cada elemento
   elements.forEach(el => {
     el.style.left = Math.random() * (window.innerWidth - 150) + "px";
     el.style.top = Math.random() * (window.innerHeight - 150) + "px";
-    el.dataset.vx = (Math.random() * 4 - 2).toFixed(2); // valor entre -2 e 2
+    el.dataset.vx = (Math.random() * 4 - 2).toFixed(2);
     el.dataset.vy = (Math.random() * 4 - 2).toFixed(2);
   });
-
   function animate() {
     elements.forEach(el => {
       let vx = parseFloat(el.dataset.vx);
@@ -188,19 +185,14 @@ function initElementMovement() {
       let posX = parseFloat(el.style.left);
       let posY = parseFloat(el.style.top);
       const rect = el.getBoundingClientRect();
-
-      // Atualiza posição
       posX += vx;
       posY += vy;
-
-      // Rebote nas bordas da janela
       if (posX <= 0 || posX + rect.width >= window.innerWidth) {
         vx = -vx;
       }
       if (posY <= 0 || posY + rect.height >= window.innerHeight) {
         vy = -vy;
       }
-
       el.dataset.vx = vx.toFixed(2);
       el.dataset.vy = vy.toFixed(2);
       el.style.left = posX + "px";
@@ -210,7 +202,6 @@ function initElementMovement() {
   }
   animate();
 }
-
 
 /* Contact Modal Handling with Countdown */
 function initContactModal() {
@@ -233,11 +224,11 @@ function initContactModal() {
       }
     }, 1000);
   });
-  
+
   contactModalClose.addEventListener("click", () => {
     contactModal.style.display = "none";
   });
-  
+
   window.addEventListener("click", (e) => {
     if (e.target === contactModal) {
       contactModal.style.display = "none";
@@ -253,24 +244,25 @@ function initEnigmaModal() {
 
   enigmaElement.addEventListener("click", () => {
     enigmaModal.style.display = "block";
-    updateEnigmaModalText(); 
-    enigmaModal.dataset.interval = setInterval(updateEnigmaModalText, 3000);
+    updateEnigmaModalText();
+    // Armazenamos o ID do intervalo em uma propriedade personalizada
+    enigmaModal.intervalId = setInterval(updateEnigmaModalText, 3000);
   });
 
   enigmaModalClose.addEventListener("click", () => {
     enigmaModal.style.display = "none";
-    clearInterval(enigmaModal.dataset.interval);
+    clearInterval(enigmaModal.intervalId);
   });
 
   window.addEventListener("click", (e) => {
     if (e.target === enigmaModal) {
       enigmaModal.style.display = "none";
-      clearInterval(enigmaModal.dataset.interval);
+      clearInterval(enigmaModal.intervalId);
     }
   });
 }
 
-/* Update Enigma Modal Text with dynamic phrases about $SFT and mystery */
+/* Update Enigma Modal Text with dynamic phrases */
 function updateEnigmaModalText() {
   const phrases = [
     "Every moment, Sherk Fun Token unveils a new secret...",
@@ -313,29 +305,28 @@ function updateEnigmaModalText() {
   document.getElementById("enigmaModalText").textContent = randomPhrase;
 }
 
-
 /* Admin Modal Handling */
 function initAdminModal() {
   const adminBtn = document.getElementById("adminBtn");
   const modal = document.getElementById("adminModal");
   const closeBtn = document.getElementById("modalClose");
   const adminForm = document.getElementById("adminForm");
-  
+
   adminBtn.addEventListener("click", (e) => {
     e.preventDefault();
     modal.style.display = "block";
   });
-  
+
   closeBtn.addEventListener("click", () => {
     modal.style.display = "none";
   });
-  
+
   window.addEventListener("click", (e) => {
     if (e.target === modal) {
       modal.style.display = "none";
     }
   });
-  
+
   adminForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const username = document.getElementById("adminUser").value;
@@ -348,28 +339,21 @@ function initAdminModal() {
   });
 }
 
-<!-- FAQ Accordion Script -->
-<script>
-  /* Lógica do Accordion para o FAQ - Apenas um aberto por vez */
+/* FAQ Accordion Script */
+// Esse código garante que apenas um item do FAQ fique aberto por vez.
+function initFAQAccordion() {
   const faqItems = document.querySelectorAll('.faq-item');
-  
   faqItems.forEach(item => {
     const question = item.querySelector('.faq-question');
     question.addEventListener('click', () => {
-      // Verifica se o item clicado já está ativo
       const isActive = item.classList.contains('active');
-      
-      // Fecha todas as respostas
       faqItems.forEach(i => i.classList.remove('active'));
-      
-      // Se o item clicado não estava ativo, ativa-o (abre sua resposta)
       if (!isActive) {
         item.classList.add('active');
       }
     });
   });
-</script>
-
+}
 
 /* Initialization */
 window.onload = function () {
@@ -384,5 +368,6 @@ window.onload = function () {
   initContactModal();
   initEnigmaModal();
   initElementMovement();
+  initFAQAccordion();
   console.log("Futuristic site loaded!");
 };
