@@ -577,6 +577,7 @@ main {
 
 /* Roadmap Section */
 /* Roadmap Section Geral */
+/* Roadmap Section Geral */
 .roadmap {
   text-align: center;
   padding: 40px;
@@ -598,41 +599,36 @@ main {
   text-shadow: 0 0 8px #39ff14, 0 0 15px #ff1493;
 }
 
-/* Container dos Cards do Roadmap */
+/* Container Horizontal dos Cards do Roadmap */
 .roadmap-content {
-  position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Roadmap Item – Cada Card */
 .roadmap-item {
+  flex: 0 0 auto;
+  min-width: 300px;
   background: rgba(0, 0, 0, 0.9);
   padding: 20px;
   border: 4px solid #39ff14;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  scroll-snap-align: start;
   position: relative;
-  margin-top: -30px;  /* Sobreposição: os cards se empilham */
-  z-index: 1;
 }
 
-/* O primeiro card não terá margem negativa */
-.roadmap-item:first-child {
-  margin-top: 0;
-}
-
-/* Efeito Hover: o card se desloca para "afastar" e empurra os demais */
+/* Efeito Hover: o card se desloca e aumenta ligeiramente */
 .roadmap-item:hover {
-  transform: translate(20px, -10px) scale(1.05);
+  transform: translateY(-10px) scale(1.05);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
   z-index: 10;
-}
-
-/* Os cards subsequentes se deslocam um pouco para o lado quando um card é hover */
-.roadmap-item:hover ~ .roadmap-item {
-  transform: translateX(20px);
 }
 
 /* Cabeçalho de Cada Card */
@@ -649,4 +645,18 @@ main {
   color: #e0e0e0;
   line-height: 1.6;
   margin-bottom: 10px;
+}
+
+/* Estilização da Scrollbar para navegadores compatíveis */
+.roadmap-content::-webkit-scrollbar {
+  height: 10px;
+}
+
+.roadmap-content::-webkit-scrollbar-thumb {
+  background: #434343;
+  border-radius: 10px;
+}
+
+.roadmap-content::-webkit-scrollbar-track {
+  background: #262626;
 }
