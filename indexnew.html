@@ -21,7 +21,7 @@
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <!-- Estilos adicionais para o splash modal -->
+    <!-- Estilos adicionais para o splash modal e fade-in do conteúdo principal -->
     <style>
       /* Splash Modal Styles */
       #splashModal {
@@ -37,7 +37,7 @@
         z-index: 2000;
         overflow: hidden;
         opacity: 1;
-        /* Permite que cliques passem para o conteúdo abaixo */
+        /* Enquanto o splash estiver ativo, ele bloqueia interações */
         pointer-events: auto;
       }
       #hacker-text {
@@ -48,8 +48,14 @@
         text-align: left;
         font-size: 28px; /* Letras maiores */
         color: #0f0;
-        text-shadow: 0 0 10px #ff1493, 0 0 20px #ff1493; /* Glow pink */
+        /* Glow rosa intensificado */
+        text-shadow: 0 0 20px #ff1493, 0 0 40px #ff1493;
         font-family: 'Courier New', Courier, monospace;
+      }
+      /* Conteúdo principal inicia invisível e fará fade-in */
+      main {
+        opacity: 0;
+        transition: opacity 1000ms ease;
       }
     </style>
   </head>
@@ -256,8 +262,8 @@ Your journey begins now.
       let index = 0;
       // Tempo de digitação por caractere (em ms)
       const typeDelay = 40;
-      // Tempo adicional para o fade-out após a digitação (em ms)
-      const fadeDelay = 800;
+      // Após terminar a digitação, aguarda 1 segundo para iniciar o fade-out do splash modal
+      const fadeDelay = 1000;
       
       // Função de digitação do texto (typewriter)
       function typeText() {
@@ -266,26 +272,33 @@ Your journey begins now.
           hackerTextElem.innerHTML += text[index];
           index++;
           setTimeout(typeText, typeDelay);
+        } else {
+          // Quando a digitação terminar, aguarda fadeDelay e inicia o fade-out do splash modal
+          setTimeout(startFadeOut, fadeDelay);
         }
       }
       
-      // Ao carregar a página, inicia a digitação e configura o fade-out para terminar fadeDelay após o fim da animação.
-      window.addEventListener("load", () => {
-        // Inicia a digitação do texto
-        typeText();
-        // Calcula a duração total da animação de digitação + fadeDelay
-        const totalFadeDuration = text.length * typeDelay + fadeDelay;
+      function startFadeOut() {
         const splashModal = document.getElementById("splashModal");
-        // Configura a transição de opacidade com a duração calculada
-        splashModal.style.transition = `opacity ${totalFadeDuration}ms linear`;
-        // Permite a interação com o conteúdo principal enquanto o splash modal fade-out ocorre
+        // Libera as interações com o conteúdo principal
         splashModal.style.pointerEvents = "none";
-        // Inicia o fade-out imediatamente
+        // Define a duração do fade-out (1 segundo)
+        const fadeDuration = 1000;
+        splashModal.style.transition = `opacity ${fadeDuration}ms linear`;
         splashModal.style.opacity = "0";
-        // Após o tempo total, remove o splash modal (oculta-o completamente)
         setTimeout(() => {
           splashModal.style.display = "none";
-        }, totalFadeDuration);
+        }, fadeDuration);
+      }
+      
+      // Quando a página carregar:
+      window.addEventListener("load", () => {
+        // Inicia a digitação imediatamente
+        typeText();
+        // Inicia o fade-in do conteúdo principal 1 segundo após o início da animação
+        setTimeout(() => {
+          document.querySelector("main").style.opacity = "1";
+        }, 1000);
       });
     </script>
   </body>
