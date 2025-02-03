@@ -37,6 +37,7 @@
         z-index: 2000;
         overflow: hidden;
         opacity: 1;
+        /* Permite que cliques passem para o conteúdo abaixo */
         pointer-events: auto;
       }
       #hacker-text {
@@ -45,9 +46,9 @@
         white-space: pre-wrap;
         word-wrap: break-word;
         text-align: left;
-        font-size: 28px;
+        font-size: 28px; /* Letras maiores */
         color: #0f0;
-        text-shadow: 0 0 20px #ff1493, 0 0 40px #ff1493;
+        text-shadow: 0 0 20px #ff1493, 0 0 40px #ff1493; /* Glow pink */
         font-family: 'Courier New', Courier, monospace;
       }
     </style>
@@ -78,7 +79,7 @@
       </ul>
     </div>
 
-    <!-- Animated PNG Elements in Background -->
+    <!-- Animated PNG Elements in Background (each on its own layer) -->
     <div class="animated-elements">
       <div class="element trovoes"></div>
       <div class="element galaxias"></div>
@@ -100,9 +101,9 @@
         </div>
       </section>
 
-      <!-- Enigma Counter (Guess and Win) -->
+      <!-- Enigma Counter (Guess and Win) placed just below the ticker -->
       <div id="enigma" class="enigma-counter">
-        <!-- Dynamic text injected by JS -->
+        <!-- The dynamic text will be injected here via JS -->
       </div>
 
       <!-- Dynamic Content Sections -->
@@ -174,24 +175,74 @@
         </ul>
       </section>
 
-      <!-- Roadmap Section -->
-      <section id="roadmap" class="content-box roadmap">
-        <h2 class="neon-text">🚀 Sherk Fun Token Roadmap</h2>
-        <div class="mini-card-grid">
-          <!-- Mini Cards (veja o exemplo de um card abaixo) -->
-          <div class="mini-card">
-            <h3 class="mini-card-title">Q1 2025</h3>
-            <p>🚀 Launch $SFT on Solana.</p>
-            <p>🔍 List on CMC & CG.</p>
-            <p>🤖 Deploy SherkFunBuyBot.</p>
-            <p>💡 Kickstart community growth.</p>
-            <p>🎁 Airdrop for early adopters.</p>
-            <p>📢 Initiate targeted marketing.</p>
-          </div>
-          <!-- Outros mini cards seguem o mesmo padrão -->
-        </div>
-      </section>
 
+<!-- Roadmap Section -->
+<section id="roadmap" class="content-box roadmap">
+  <h2 class="neon-text">🚀 Sherk Fun Token Roadmap</h2>
+  <div class="mini-card-grid">
+<!-- Mini Card 1 -->
+<div class="mini-card">
+  <h3 class="mini-card-title">Q1 2025</h3>
+  <p>🚀 Launch $SFT on Solana.</p>
+  <p>🔍 List on CMC & CG.</p>
+  <p>🤖 Deploy SherkFunBuyBot.</p>
+  <p>💡 Kickstart community growth.</p>
+  <p>🎁 Airdrop for early adopters.</p>
+  <p>📢 Initiate targeted marketing.</p>
+</div>
+
+<!-- Mini Card 2 -->
+<div class="mini-card">
+  <h3 class="mini-card-title">Q2 2025</h3>
+  <p>🎨 Drop exclusive NFTs.</p>
+  <p>🖼️ Host digital art contests.</p>
+  <p>📱 Launch the mobile app.</p>
+  <p>🤝 Forge strategic partnerships.</p>
+  <p>💹 Introduce staking rewards.</p>
+  <p>🔗 Integrate DeFi features.</p>
+</div>
+
+<!-- Mini Card 3 -->
+<div class="mini-card">
+  <h3 class="mini-card-title">Q3 2025</h3>
+  <p>🌐 Expand global partnerships.</p>
+  <p>🎮 Enhance the Game Hub.</p>
+  <p>🔒 Boost security protocols.</p>
+  <p>🔄 Launch cross-chain bridges.</p>
+  <p>💰 Introduce yield farming.</p>
+  <p>📊 Optimize transaction speeds.</p>
+</div>
+
+<!-- Mini Card 4 -->
+<div class="mini-card">
+  <h3 class="mini-card-title">Q4 2025</h3>
+  <p>🎉 Host SherkCon 2025 event.</p>
+  <p>💎 Announce major platform upgrades.</p>
+  <p>📣 Roll out innovative dApps.</p>
+  <p>🚀 Scale ecosystem infrastructure.</p>
+  <p>🌟 Integrate metaverse experiences.</p>
+  <p>🌍 Launch global marketing push.</p>
+</div>
+
+<!-- Mini Card 5 -->
+<div class="mini-card">
+  <h3 class="mini-card-title">Q1 2026</h3>
+  <p>🔜 Roll out community governance.</p>
+  <p>🔥 Initiate periodic token burns.</p>
+  <p>🛠️ Launch new DeFi protocols.</p>
+  <p>🤩 Unveil surprise partnerships.</p>
+  <p>📈 Expand ecosystem tools.</p>
+  <p>🚀 Update strategic roadmap.</p>
+</div>
+
+    <!-- Adicione mais mini-cards conforme necessário -->
+  </div>
+</section>
+
+
+
+
+      
       <!-- Meme Channel Section -->
       <section id="meme" class="content-box">
         <h2 class="neon-text">Subscribe to our Meme Channel</h2>
@@ -201,43 +252,57 @@
         <a href="https://t.me/SherkMemes" class="button-highlightgame">Join Now</a>
       </section>
 
-      <!-- FAQ Section -->
-      <section id="faq" class="content-box faq-section">
-        <h2 class="neon-text">Frequently Asked Questions</h2>
-        <div class="faq-item">
-          <div class="faq-question">What is Sherk Fun Token ($SFT)?</div>
-          <div class="faq-answer">
-            Sherk Fun Token ($SFT) is a revolutionary cryptocurrency project built on the Solana blockchain, merging cutting‐edge technology with a vibrant, neon-inspired community experience.
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">How do I participate in the Enigma challenge?</div>
-          <div class="faq-answer">
-            To participate in the Enigma challenge, click on the "Guess and Win" section on our homepage. Follow the instructions, submit your answer, and join our Telegram community for updates and rewards.
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">Where can I find the latest updates about $SFT?</div>
-          <div class="faq-answer">
-            You can get the latest updates via our Crypto Ticker, official website, and social media channels.
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">How is community feedback managed?</div>
-          <div class="faq-answer">
-            All submissions and community feedback are collected and reviewed periodically. Your input helps us enhance our project.
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">Who can I contact for support?</div>
-          <div class="faq-answer">
-            For further assistance, please visit our Contact page or reach out via our official Telegram channel.
-          </div>
-        </div>
-      </section>
+<!-- FAQ Section -->
+<section id="faq" class="content-box faq-section">
+  <h2 class="neon-text">Frequently Asked Questions</h2>
+  
+  <!-- FAQ Item 1 -->
+  <div class="faq-item">
+    <div class="faq-question">What is Sherk Fun Token ($SFT)?</div>
+    <div class="faq-answer">
+      Sherk Fun Token ($SFT) is a revolutionary cryptocurrency project built on the Solana blockchain, merging cutting‐edge technology with a vibrant, neon-inspired community experience.
+    </div>
+  </div>
+  
+  <!-- FAQ Item 2 -->
+  <div class="faq-item">
+    <div class="faq-question">How do I participate in the Enigma challenge?</div>
+    <div class="faq-answer">
+      To participate in the Enigma challenge, click on the "Guess and Win" section on our homepage. Follow the instructions, submit your answer, and join our Telegram community for updates and rewards.
+    </div>
+  </div>
+  
+  <!-- FAQ Item 3 -->
+  <div class="faq-item">
+    <div class="faq-question">Where can I find the latest updates about $SFT?</div>
+    <div class="faq-answer">
+      You can get the latest updates via our Crypto Ticker, official website, and social media channels. We also share public announcements and community feedback for transparency.
+    </div>
+  </div>
+  
+  <!-- FAQ Item 4 -->
+  <div class="faq-item">
+    <div class="faq-question">How is community feedback managed?</div>
+    <div class="faq-answer">
+      All submissions and community feedback are collected and reviewed periodically. Your input helps us enhance our project and ensures that we stay transparent with our community.
+    </div>
+  </div>
+  
+  <!-- FAQ Item 5 -->
+  <div class="faq-item">
+    <div class="faq-question">Who can I contact for support?</div>
+    <div class="faq-answer">
+      For further assistance, please visit our Contact page or reach out to us directly via our official Telegram channel. Our support team is always ready to help.
+    </div>
+  </div>
+  
+  <!-- Add more FAQ items as needed -->
+</section>
+
+      
     </main>
 
-    <!-- Footer -->
+    <!-- Footer with hover effect to display mvpico.png -->
     <footer id="contato">
       <p>
         &copy; 2024/2025 Sherk Fun Token ($SFT) | Powered by
@@ -255,10 +320,10 @@
       </div>
     </footer>
 
-    <!-- Floating Contact Button (sem onclick inline) -->
-    <button id="floating-button">Contact</button>
+    <!-- Floating Contact Button -->
+    <button id="floating-button" onclick="initContactModal()">Contact</button>
 
-    <!-- Admin Modal -->
+    <!-- Admin Modal (for admin login) -->
     <div id="adminModal" class="modal">
       <div class="modal-content">
         <span class="close" id="modalClose">&times;</span>
@@ -271,7 +336,7 @@
       </div>
     </div>
 
-    <!-- Contact Modal -->
+    <!-- Contact Modal with Countdown -->
     <div id="contactModal" class="modal">
       <div class="modal-content">
         <span class="close" id="contactModalClose">&times;</span>
@@ -280,7 +345,7 @@
       </div>
     </div>
 
-    <!-- Enigma Modal -->
+    <!-- Enigma Modal for "Guess and Win" -->
     <div id="enigmaModal" class="modal">
       <div class="modal-content">
         <span class="close" id="enigmaModalClose">&times;</span>
@@ -291,8 +356,9 @@
 
     <!-- Scripts -->
     <script src="script.js"></script>
-    <!-- Splash Modal Script -->
+    <!-- Script do Splash Modal -->
     <script>
+      // Texto de inicialização (splash) em inglês aprimorado
       let text = `
 Initializing Sherk Fun Token System...
 Connecting to Sherkfun.io... [OK]
@@ -303,9 +369,14 @@ Deploy tokens at Sherkfun.io... [OK]
 Welcome to the new crypto frontier.
 Your journey begins now.
       `;
+      
       let index = 0;
+      // Tempo de digitação por caractere (em ms)
       const typeDelay = 40;
+      // Tempo adicional para o fade-out após a digitação (em ms)
       const fadeDelay = 1000;
+      
+      // Função de digitação do texto (typewriter)
       function typeText() {
         const hackerTextElem = document.getElementById("hacker-text");
         if (index < text.length) {
@@ -314,13 +385,21 @@ Your journey begins now.
           setTimeout(typeText, typeDelay);
         }
       }
+      
+      // Ao carregar a página, inicia a digitação e configura o fade-out para terminar fadeDelay após o fim da animação.
       window.addEventListener("load", () => {
+        // Inicia a digitação do texto
         typeText();
+        // Calcula a duração total da animação de digitação + fadeDelay
         const totalFadeDuration = text.length * typeDelay + fadeDelay;
         const splashModal = document.getElementById("splashModal");
+        // Configura a transição de opacidade com a duração calculada
         splashModal.style.transition = `opacity ${totalFadeDuration}ms linear`;
+        // Permite a interação com o conteúdo principal enquanto o splash modal fade-out ocorre
         splashModal.style.pointerEvents = "none";
+        // Inicia o fade-out imediatamente
         splashModal.style.opacity = "0";
+        // Após o tempo total, remove o splash modal (oculta-o completamente)
         setTimeout(() => {
           splashModal.style.display = "none";
         }, totalFadeDuration);
