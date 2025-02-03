@@ -172,7 +172,7 @@ function updateEnigmaCounter() {
   document.getElementById("enigma").innerHTML = "Guess and Win:<br>" + result;
 }
 function startEnigmaCounter() {
-  setInterval(updateEnigmaCounter, 100);
+  setInterval(updateEnigmaCounter, 300);
 }
 
 /* Initialize movement for PNG elements with simple collision detection */
