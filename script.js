@@ -73,24 +73,24 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         title: "Introducing the Community Favorite: Sherk Fun Token ($SFT)",
         content: `
-          <p>What started as a test token on Solana by the SherkFun.io team has blossomed into a cherished community project. Today, $SFT is the flagship token of SherkFun.io with unique features that others only aspire to.</p>
-          <p>With tools like SherkFunBuyBot operating flawlessly, get ready for the upcoming SherkSnipe&Buy Bot—crafted for unmatched speed and efficiency.</p>
+          <p>What started as a test token on Solana by the SherkFun.io team has blossomed into a cherished community project. Today, $SFT is the flagship token of SherkFun.io with unique features that others only aspire to.</p><br>
+          <p>With tools like SherkFunBuyBot operating flawlessly, get ready for the upcoming SherkSnipe&Buy Bot—crafted for unmatched speed and efficiency.</p><br>
           <p>Join the revolution and be part of this incredible movement!</p>
         `
       },
       {
         title: "Discover the Sherk Fun Token ($SFT) Revolution",
         content: `
-          <p>The journey began with a test token on Solana and quickly became a community favorite. Today, $SFT is the flagship token of SherkFun.io, offering innovative features beyond compare.</p>
-          <p>With SherkFunBuyBot active and the SherkSnipe&Buy Bot on the horizon, $SFT is reshaping blockchain interaction.</p>
+          <p>The journey began with a test token on Solana and quickly became a community favorite. Today, $SFT is the flagship token of SherkFun.io, offering innovative features beyond compare.</p><br>
+          <p>With SherkFunBuyBot active and the SherkSnipe&Buy Bot on the horizon, $SFT is reshaping blockchain interaction.</p><br>
           <p>Be a part of this revolution!</p>
         `
       },
       {
         title: "Get to Know the Sherk Fun Token ($SFT)",
         content: `
-          <p>$SFT evolved from a simple test token into a beloved flagship project on SherkFun.io. It offers features that outshine the rest.</p>
-          <p>With SherkFunBuyBot in action and SherkSnipe&Buy Bot on its way, token purchases become faster and smarter.</p>
+          <p>$SFT evolved from a simple test token into a beloved flagship project on SherkFun.io. It offers features that outshine the rest.</p><br>
+          <p>With SherkFunBuyBot in action and SherkSnipe&Buy Bot on its way, token purchases become faster and smarter.</p><br>
           <p>Join the revolution now!</p>
         `
       }
@@ -142,19 +142,19 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         title: "Giveaway Announcement",
         content: `
-          <p>The exclusive $SFT Giveaway kicks off once the token bonds to Raydium! 0.5% (5M) of the supply will find a new holder. Every purchase over $50 counts, and winners must hold tokens for at least 48 hours.</p>
+          <p>The exclusive $SFT Giveaway kicks off once the token bonds to Raydium! 0.5% (5M) of the supply will find a new holder. <br>Every purchase over $50 counts, and winners must hold tokens for at least 48 hours.</p>
         `
       },
       {
         title: "Giveaway Announcement",
         content: `
-          <p>After bonding $SFT to Raydium, an exclusive Giveaway will be sponsored! 0.5% (5M) of the supply goes to a new holder. Purchases over $50 count—hold your tokens for 48 hours to be eligible.</p>
+          <p>After bonding $SFT to Raydium, an exclusive Giveaway will be sponsored! 0.5% (5M) of the supply goes to a new holder. <br>Purchases over $50 count—hold your tokens for 48 hours to be eligible.</p>
         `
       },
       {
         title: "Giveaway Announcement",
         content: `
-          <p>Get ready for an exciting Giveaway once $SFT bonds to Raydium! 0.5% (5M) of the supply is up for grabs. All purchases over $50 qualify; remember to hold your tokens for 48 hours to win.</p>
+          <p>Get ready for an exciting Giveaway once $SFT bonds to Raydium! 0.5% (5M) of the supply is up for grabs. <br>All purchases over $50 qualify; remember to hold your tokens for 48 hours to win.</p>
         `
       }
     ];
