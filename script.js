@@ -140,19 +140,19 @@ function getRandomGiveaway() {
     {
       title: "Giveaway Announcement",
       content: `
-        <p>After we bond $SFT to Raydium, I will sponsor an exclusive Giveaway!<br>0.5% (5M) of the supply will be given to a new holder!<br>To qualify, every purchase over $50 (after bonding to Raydium) will count. <br>Make sure to hold your tokens for at least 48 hours to be eligible for the giveaway.</p>
+        <p>After we bond $SFT to Raydium, I will sponsor an exclusive Giveaway! 0.5% (5M) of the supply will be given to a new holder!<br>To qualify, every purchase over $50 (after bonding to Raydium) will count. <br>Make sure to hold your tokens for at least 48 hours to be eligible for the giveaway.</p>
       `
     },
     {
       title: "Giveaway Announcement",
       content: `
-        <p>Get ready for an exciting Giveaway once $SFT is bonded to Raydium!<br>0.5% (5M) of the total supply is up for grabs!<br>All purchases over $50, after bonding to Raydium, will be eligible to participate.<br>Remember to hold your tokens for 48 hours after the giveaway to qualify as a winner.</p>
+        <p>Get ready for an exciting Giveaway once $SFT is bonded to Raydium! 0.5% (5M) of the total supply is up for grabs!<br>All purchases over $50, after bonding to Raydium, will be eligible to participate.<br>Remember to hold your tokens for 48 hours after the giveaway to qualify as a winner.</p>
       `
     },
     {
       title: "Giveaway Announcement",
       content: `
-        <p>Get ready for an exciting Giveaway once $SFT is bonded to Raydium!<br>0.5% (5M) of the total supply is up for grabs!<br>All purchases over $50, after bonding to Raydium, will be eligible to participate.<br>Remember to hold your tokens for 48 hours after the giveaway to qualify as a winner.</p>
+        <p>Get ready for an exciting Giveaway once $SFT is bonded to Raydium! 0.5% (5M) of the total supply is up for grabs!<br>All purchases over $50, after bonding to Raydium, will be eligible to participate.<br>Remember to hold your tokens for 48 hours after the giveaway to qualify as a winner.</p>
       `
     }
   ];
